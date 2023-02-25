@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "2c895cf7258331bd78fcb26112e3e3b47c59692778e8fa36b0244e3429dcf56d"
+build_start_time: [1677342896, 923208951]
+build_end_time: [1677342919, 562571048]
+inputs:
+  "/Users/kevin/scylla/scylla/ContentView.swift": [1677342881, 743027210]
+  "/Users/kevin/scylla/scylla/scyllaApp.swift": [1677321863, 912472248]
