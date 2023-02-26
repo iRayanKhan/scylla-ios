@@ -32,6 +32,8 @@ Contributions are always welcome!
 
 Create a `pull` request to get started!
 
+To help and test the app during developement start [`here`](https://forms.gle/PgVofZFqfLvNnAA7A)
+
 
 ## Feedback
 
