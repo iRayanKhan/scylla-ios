@@ -1,5 +1,5 @@
 
-# Scylla 
+# Scylla
 
 Probably the best 3rd party app store out there for iOS!
 
@@ -35,7 +35,7 @@ Create a `pull` request to get started!
 
 ## Feedback
 
-If you have any feedback, please reach out to me at kevin.alavik@icloud.com
+If you have any feedback, please reach out to me at kevin.alavik@icloud.com and ill write back as soon as possible
 
 
 ## Optimizations
