@@ -56,7 +56,7 @@ let getLatestCommitID: () -> String? = {
 }
 
 let latestCommitID = getLatestCommitID()
-
+let deviceModel = UIDevice.modelName
 var systemVersion = UIDevice.current.systemVersion
 var sysName = UIDevice.current.systemName
 struct ContentView: View {
@@ -119,9 +119,10 @@ struct ContentView: View {
                         Image(systemName: "iphone")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
-                        Text(UIDevice.current.model).position(x: 35, y: 15)
+                        Text(deviceModel)
                             .foregroundColor(Color.gray)
                     }
+                    //MARK: GET current device
                     HStack {
                         Image(systemName: "number")
                             .foregroundColor(Color.gray)
@@ -134,6 +135,7 @@ struct ContentView: View {
                         Image(systemName: "moon.stars.fill")
                             .foregroundColor(Color.gray)
                         Text("Scylla Version 0.1").position(x: 70, y: 15)
+                        //MARK: READ VALUE
                             .foregroundColor(Color.gray)
                     }
                     HStack {
