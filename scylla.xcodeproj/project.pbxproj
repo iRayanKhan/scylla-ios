@@ -15,6 +15,7 @@
 		0A2AD44D29AA1E0A00102EE8 /* scyllaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */; };
 		0A2AD44F29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */; };
 		0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */; };
+		27DB544D29AD37370042FE0A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB544C29AD37370042FE0A /* DeviceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaUITests.swift; sourceTree = "<group>"; };
 		0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicatonManager.swift; sourceTree = "<group>"; };
+		27DB544C29AD37370042FE0A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				0A2AD43529AA1E0A00102EE8 /* Assets.xcassets */,
 				0A2AD43729AA1E0A00102EE8 /* Preview Content */,
 				0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */,
+				27DB544C29AD37370042FE0A /* DeviceManager.swift */,
 			);
 			path = scylla;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2AD43429AA1E0700102EE8 /* ContentView.swift in Sources */,
+				27DB544D29AD37370042FE0A /* DeviceManager.swift in Sources */,
 				0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */,
 				0A2AD43229AA1E0700102EE8 /* scyllaApp.swift in Sources */,
 			);
