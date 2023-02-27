@@ -76,43 +76,47 @@ struct ContentView: View {
                 Section("Custom Cert") {
                     HStack {
                         Image(systemName: "checkmark.seal")
-                        Button(action: {showingAlert = true}) {Text("Select existing cert").tint(.pink)}.position(x: 75, y: 15).alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
+                        Button(action: {showingAlert = true}) {Text("Select existing cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
                     }
                     HStack {
                         Image(systemName: "square.and.arrow.down")
-                        Button(action: {showingAlert = true}) {Text("Import custom cert").tint(.pink)}.position(x: 80, y: 15).alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
+                        Button(action: {showingAlert = true}) {Text("Import custom cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
                     }
                 }
                 Section("Credits") {
                     HStack {
                         Image("puffer").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@pufferisadev (Lead Developer)").position(x: 130, y: 15)
+                        Text("@pufferisadev (Lead Developer)")
                     }
                     HStack {
                         Image("beef").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@mrbeef777 (Co Developer)").position(x: 115, y: 15)
+                        Text("@mrbeef777 (Co Developer)")
                     }
                     HStack {
                         Image("sourcelocation").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@sourcelocation (ApplicationManager)").position(x: 155, y: 15)
+                        Text("@sourcelocation (ApplicationManager)")
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
+                          
                     }
                 }
                 
                 Section("Testers") {
                     HStack {
+                        
                         Image("1359").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("Mr.").position(x: 20, y: 15)
+                        Text("Mr.")
                     }
                     HStack {
                         Image("JustDie").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("Justdie").position(x: 35, y: 15)
+                        Text("Justdie")
                     }
                 }
                 Section("🤓 Nerd Info") {
                     HStack {
                         Image(systemName: "gear")
                             .foregroundColor(Color.gray)
-                        Text(sysName + " " + systemVersion).position(x: 35, y: 15)
+                        Text(sysName + " " + systemVersion)
                             .foregroundColor(Color.gray)
                     }
                     HStack {
@@ -127,35 +131,37 @@ struct ContentView: View {
                         Image(systemName: "number")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
-                        Text(UIDevice.current.description).position(x: 125, y: 15)
+                        Text(UIDevice.current.description)
                             .foregroundColor(Color.gray)
 
                     }
                     HStack {
                         Image(systemName: "moon.stars.fill")
                             .foregroundColor(Color.gray)
-                        Text("Scylla Version 0.1").position(x: 70, y: 15)
+                        Text("Scylla Version 0.1")
                         //MARK: READ VALUE
                             .foregroundColor(Color.gray)
                     }
                     HStack {
                         Image(systemName: "laptopcomputer.and.arrow.down")
+                           
                             .foregroundColor(Color.gray)
-                        Text(latestCommitID ?? "").position(x: 30, y: 15)
+                        Text(latestCommitID ?? "")
                             .foregroundColor(Color.gray)
+                            
                     }
                     HStack {
                         Image(systemName: "checkmark.seal.fill")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
-                        Text("Signed with ").position(x: 50, y: 15)
+                        Text("Signed with ")
                             .foregroundColor(Color.gray)
                     }
                     HStack {
                         Image(systemName: "touchid")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
-                        Text(udid).position(x: 140, y: 15)
+                        Text(udid)
                             .foregroundColor(Color.gray)
                             .font(.system(size: 12.5))
                     }
