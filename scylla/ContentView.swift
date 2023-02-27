@@ -7,93 +7,70 @@
 
 import SwiftUI
 
+
 extension UIScreen {
    static let screenWidth = UIScreen.main.bounds.size.width
    static let screenHeight = UIScreen.main.bounds.size.height
    static let screenSize = UIScreen.main.bounds.size
 }
 
+func simpleSuccess() {
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.success)
+}
+
+import Foundation
+
+let repositoryUrl = "https://api.github.com/repos/KevinAlavik/scylla-ios/commits"
+
+let getLatestCommitID: () -> String? = {
+    let semaphore = DispatchSemaphore(value: 0)
+    var commitID: String?
+    
+    let url = URL(string: "\(repositoryUrl)?per_page=1")!
+    let request = URLRequest(url: url)
+    
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        defer { semaphore.signal() }
+        
+        guard let data = data else {
+            print(error?.localizedDescription ?? "Unknown error")
+            return
+        }
+        
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]],
+               let commit = json.first,
+               let sha = commit["sha"] as? String {
+                commitID = String(sha.prefix(7))
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    task.resume()
+    semaphore.wait()
+    
+    return commitID
+}
+
+let latestCommitID = getLatestCommitID()
+
 var systemVersion = UIDevice.current.systemVersion
 var sysName = UIDevice.current.systemName
-
 struct ContentView: View {
     @State private var showingAlert = false
-    
+    @State private var releaseURL: URL? = nil
+    @State private var showAlert = false
+    @State private var udid = UIDevice.current.identifierForVendor!.uuidString
     var body: some View {
-        
         NavigationView {
             List {
-                Section("Recomended Apps") {
+                Section("Failed to fetch repo") {
                     HStack {
-                        Image("cowabunga").resizable().frame(width: 25.0, height: 25.0)
-                        Text("Cowabunga").position(x: 50, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
-                    }
-                }
-                Section("Other Apps") {
-                    HStack {
-                        Image("enmity").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("Enmity").position(x: 35, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
-                    }
-                }
-                Section("Jailbreaks") {
-                    HStack {
-                        Image("unc0ver").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("Unc0ver").position(x: 35, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
-                    }
-                }
-                Section("MacDirtyCow (Only supports up to iOS 16.1.2)") {
-                    HStack {
-                        Image("cowabunga").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("Cowabunga").position(x: 50, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
-                    }
-                    HStack {
-                        Image("fsp").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("FileSwitcherPro").position(x: 65, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
-                    }
-                    HStack {
-                        Image("dc").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("DynamicCow").position(x: 55, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
-                    }
-                    HStack {
-                        Image("resset16").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("ResSet16").position(x: 40, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
-                    }
-                    HStack {
-                        Image("ccenabler").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("CCEnabler").position(x: 45, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
-                    }
-                }
-                Section("TrollStore Apps") {
-                    HStack {
-                        Image("trollbox").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("TrollBox").position(x: 35, y: 15)
-                        Button("Install") {
-                            print("install app")
-                        }.position(x: 120, y: 15)
+                        Text("Failed to fetch repo, Error: 501")
+                            .foregroundColor(.red)
                     }
                 }
                 Section("Custom Cert") {
@@ -109,19 +86,49 @@ struct ContentView: View {
                 Section("Credits") {
                     HStack {
                         Image("puffer").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("puffer (Lead Developer)").position(x: 100, y: 15)
+                        Text("@pufferisadev (Lead Developer)").position(x: 130, y: 15)
                     }
                     HStack {
                         Image("beef").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("beef (Co Developer)").position(x: 85, y: 15)
+                        Text("@mrbeef777 (Co Developer)").position(x: 115, y: 15)
+                    }
+                    HStack {
+                        Image("sourcelocation").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
+                        Text("@sourcelocation (ApplicationManager)").position(x: 155, y: 15)
                     }
                 }
-                Section("Nerd Info") {
+                
+                Section("Testers") {
+                    HStack {
+                        Image("1359").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
+                        Text("Mr.").position(x: 20, y: 15)
+                    }
+                    HStack {
+                        Image("JustDie").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
+                        Text("Justdie").position(x: 35, y: 15)
+                    }
+                }
+                Section("🤓 Nerd Info") {
                     HStack {
                         Image(systemName: "gear")
                             .foregroundColor(Color.gray)
                         Text(sysName + " " + systemVersion).position(x: 35, y: 15)
                             .foregroundColor(Color.gray)
+                    }
+                    HStack {
+                        Image(systemName: "iphone")
+                            .foregroundColor(Color.gray)
+                            .onTapGesture(perform: simpleSuccess)
+                        Text(UIDevice.current.model).position(x: 35, y: 15)
+                            .foregroundColor(Color.gray)
+                    }
+                    HStack {
+                        Image(systemName: "number")
+                            .foregroundColor(Color.gray)
+                            .onTapGesture(perform: simpleSuccess)
+                        Text(UIDevice.current.description).position(x: 125, y: 15)
+                            .foregroundColor(Color.gray)
+
                     }
                     HStack {
                         Image(systemName: "moon.stars.fill")
@@ -132,8 +139,23 @@ struct ContentView: View {
                     HStack {
                         Image(systemName: "laptopcomputer.and.arrow.down")
                             .foregroundColor(Color.gray)
-                        Text("3671d0b").position(x: 30, y: 15)
+                        Text(latestCommitID ?? "").position(x: 30, y: 15)
                             .foregroundColor(Color.gray)
+                    }
+                    HStack {
+                        Image(systemName: "checkmark.seal.fill")
+                            .foregroundColor(Color.gray)
+                            .onTapGesture(perform: simpleSuccess)
+                        Text("Signed with ").position(x: 50, y: 15)
+                            .foregroundColor(Color.gray)
+                    }
+                    HStack {
+                        Image(systemName: "touchid")
+                            .foregroundColor(Color.gray)
+                            .onTapGesture(perform: simpleSuccess)
+                        Text(udid).position(x: 140, y: 15)
+                            .foregroundColor(Color.gray)
+                            .font(.system(size: 12.5))
                     }
                 }
             }
@@ -144,7 +166,7 @@ struct ContentView: View {
                         showingAlert = true
                         
                     }) {
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "shippingbox.fill")
                     }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -155,8 +177,10 @@ struct ContentView: View {
                     }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
                 }
             }
-        }
-        
+        }.background(
+            Image("background")
+                .resizable()
+        )
     }
 }
 

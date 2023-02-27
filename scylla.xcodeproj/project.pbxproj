@@ -14,6 +14,7 @@
 		0A2AD44329AA1E0A00102EE8 /* scyllaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44229AA1E0A00102EE8 /* scyllaTests.swift */; };
 		0A2AD44D29AA1E0A00102EE8 /* scyllaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */; };
 		0A2AD44F29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */; };
+		0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0A2AD44829AA1E0A00102EE8 /* scyllaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scyllaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaUITests.swift; sourceTree = "<group>"; };
 		0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicatonManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				0A2AD43329AA1E0700102EE8 /* ContentView.swift */,
 				0A2AD43529AA1E0A00102EE8 /* Assets.xcassets */,
 				0A2AD43729AA1E0A00102EE8 /* Preview Content */,
+				0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */,
 			);
 			path = scylla;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2AD43429AA1E0700102EE8 /* ContentView.swift in Sources */,
+				0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */,
 				0A2AD43229AA1E0700102EE8 /* scyllaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +429,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -455,6 +460,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;

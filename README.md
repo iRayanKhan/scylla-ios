@@ -1,4 +1,3 @@
-
 # Scylla
 
 Probably the best 3rd party app store out there for iOS!
