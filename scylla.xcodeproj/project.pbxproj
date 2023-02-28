@@ -15,6 +15,8 @@
 		0A2AD44D29AA1E0A00102EE8 /* scyllaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */; };
 		0A2AD44F29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */; };
 		0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */; };
+		0ACCC9DA29AE55B1007447D5 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCC9D929AE55B1007447D5 /* DeviceManager.swift */; };
+		0ACCC9DD29AE5B25007447D5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0ACCC9DC29AE5B25007447D5 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,7 @@
 		0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaUITests.swift; sourceTree = "<group>"; };
 		0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicatonManager.swift; sourceTree = "<group>"; };
+		0ACCC9D929AE55B1007447D5 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ACCC9DD29AE5B25007447D5 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +105,7 @@
 				0A2AD43529AA1E0A00102EE8 /* Assets.xcassets */,
 				0A2AD43729AA1E0A00102EE8 /* Preview Content */,
 				0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */,
+				0ACCC9D929AE55B1007447D5 /* DeviceManager.swift */,
 			);
 			path = scylla;
 			sourceTree = "<group>";
@@ -146,6 +151,9 @@
 			dependencies = (
 			);
 			name = scylla;
+			packageProductDependencies = (
+				0ACCC9DC29AE5B25007447D5 /* Kingfisher */,
+			);
 			productName = scylla;
 			productReference = 0A2AD42E29AA1E0700102EE8 /* scylla.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 0A2AD42529AA1E0700102EE8;
+			packageReferences = (
+				0ACCC9DB29AE5B25007447D5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 0A2AD42F29AA1E0700102EE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2AD43429AA1E0700102EE8 /* ContentView.swift in Sources */,
+				0ACCC9DA29AE55B1007447D5 /* DeviceManager.swift in Sources */,
 				0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */,
 				0A2AD43229AA1E0700102EE8 /* scyllaApp.swift in Sources */,
 			);
@@ -589,6 +601,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0ACCC9DB29AE5B25007447D5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0ACCC9DC29AE5B25007447D5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0ACCC9DB29AE5B25007447D5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A2AD42629AA1E0700102EE8 /* Project object */;
 }

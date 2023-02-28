@@ -3,10 +3,12 @@
 //  scylla
 //
 //  Created by Kevin Alavik on 2023-02-25.
+//  Help from Ryan
 //
 
 import SwiftUI
-
+import Kingfisher
+import Foundation
 
 extension UIScreen {
    static let screenWidth = UIScreen.main.bounds.size.width
@@ -19,7 +21,6 @@ func simpleSuccess() {
     generator.notificationOccurred(.success)
 }
 
-import Foundation
 
 let repositoryUrl = "https://api.github.com/repos/KevinAlavik/scylla-ios/commits"
 
@@ -56,7 +57,7 @@ let getLatestCommitID: () -> String? = {
 }
 
 let latestCommitID = getLatestCommitID()
-
+let deviceModel = UIDevice.modelName
 var systemVersion = UIDevice.current.systemVersion
 var sysName = UIDevice.current.systemName
 struct ContentView: View {
@@ -76,84 +77,113 @@ struct ContentView: View {
                 Section("Custom Cert") {
                     HStack {
                         Image(systemName: "checkmark.seal")
-                        Button(action: {showingAlert = true}) {Text("Select existing cert").tint(.pink)}.position(x: 75, y: 15).alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
+                        Button(action: {showingAlert = true}) {Text("Select existing cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
                     }
                     HStack {
                         Image(systemName: "square.and.arrow.down")
-                        Button(action: {showingAlert = true}) {Text("Import custom cert").tint(.pink)}.position(x: 80, y: 15).alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
+                        Button(action: {showingAlert = true}) {Text("Import custom cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
                     }
                 }
                 Section("Credits") {
                     HStack {
-                        Image("puffer").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@pufferisadev (Lead Developer)").position(x: 130, y: 15)
+                        Image("puffer").resizable().frame(width: 25.0, height: 25.0).cornerRadius(100)
+                        Text("@pufferisadev (Lead Developer)")
                     }
                     HStack {
-                        Image("beef").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@mrbeef777 (Co Developer)").position(x: 115, y: 15)
+                        Image("beef").resizable().frame(width: 25.0, height: 25.0).cornerRadius(100)
+                        Text("@mrbeef777 (Co Developer)")
                     }
                     HStack {
-                        Image("sourcelocation").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@sourcelocation (ApplicationManager)").position(x: 155, y: 15)
+                        Image("sourcelocation").resizable().frame(width: 25.0, height: 25.0).cornerRadius(100)
+                        Text("@sourcelocation (ApplicationManager)")
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
+                          
                     }
                 }
                 
                 Section("Testers") {
                     HStack {
-                        Image("1359").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("Mr.").position(x: 20, y: 15)
+                        
+                        Image("1359").resizable().frame(width: 25.0, height: 25.0).cornerRadius(100)
+                        Text("Mr.")
                     }
                     HStack {
-                        Image("JustDie").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("Justdie").position(x: 35, y: 15)
+                        Image("JustDie").resizable().frame(width: 25.0, height: 25.0).cornerRadius(100)
+                        Text("Justdie")
+                    }
+                    HStack {
+                        Image("mh").resizable().frame(width: 25.0, height: 25.0).cornerRadius(100)
+                        Text("Madhav")
+                    }
+                    HStack {
+                        Image("aw").resizable().frame(width: 25.0, height: 25.0).cornerRadius(100)
+                        Text("Art Wayne")
                     }
                 }
+                
+                Section("Contributors") {
+                    HStack {
+                        KFImage(URL(string: "https://avatars.githubusercontent.com/u/34495712?v=4")!)
+                            .resizable()
+                            .cornerRadius(100)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 25)
+                            .frame(width: 25)
+                        Text("Rayan Khan")
+                    }
+                }
+                
                 Section("🤓 Nerd Info") {
                     HStack {
                         Image(systemName: "gear")
                             .foregroundColor(Color.gray)
-                        Text(sysName + " " + systemVersion).position(x: 35, y: 15)
+                        Text(sysName + " " + systemVersion)
                             .foregroundColor(Color.gray)
                     }
                     HStack {
                         Image(systemName: "iphone")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
-                        Text(UIDevice.current.model).position(x: 35, y: 15)
+                        Text(deviceModel)
                             .foregroundColor(Color.gray)
                     }
+                    //MARK: GET current device
                     HStack {
                         Image(systemName: "number")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
-                        Text(UIDevice.current.description).position(x: 125, y: 15)
+                        Text(UIDevice.current.description)
                             .foregroundColor(Color.gray)
 
                     }
                     HStack {
                         Image(systemName: "moon.stars.fill")
                             .foregroundColor(Color.gray)
-                        Text("Scylla Version 0.1").position(x: 70, y: 15)
+                        Text("Scylla Version 0.1")
+                        //MARK: READ VALUE
                             .foregroundColor(Color.gray)
                     }
                     HStack {
                         Image(systemName: "laptopcomputer.and.arrow.down")
+                           
                             .foregroundColor(Color.gray)
-                        Text(latestCommitID ?? "").position(x: 30, y: 15)
+                        Text(latestCommitID ?? "")
                             .foregroundColor(Color.gray)
+                            
                     }
                     HStack {
                         Image(systemName: "checkmark.seal.fill")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
-                        Text("Signed with ").position(x: 50, y: 15)
+                        Text("Signed with ")
                             .foregroundColor(Color.gray)
                     }
                     HStack {
                         Image(systemName: "touchid")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
-                        Text(udid).position(x: 140, y: 15)
+                        Text(udid)
                             .foregroundColor(Color.gray)
                             .font(.system(size: 12.5))
                     }
