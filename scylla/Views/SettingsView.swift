@@ -87,18 +87,27 @@ struct SettingsView: View {
                 Section("Credits") {
                     HStack {
                         Image("puffer").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@pufferisadev (Lead Developer)")
+                        Button("@pufferisadev (Lead Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/pufferisadev")!)}
+                            .foregroundColor(Color.primary)
+                        
                     }
                     HStack {
                         Image("beef").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@mrbeef777 (Co Developer)")
+                        Button("@mrbeef777 (Co Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/mrbeef777")!)}
+                            .foregroundColor(Color.primary)
                     }
                     HStack {
                         Image("sourcelocation").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Text("@sourcelocation (ApplicationManager)")
+                        Button("@sourcelocation (ApplicationManager)") {UIApplication.shared.open(URL(string: "https://twitter.com/sourceloc")!)}
+                            .foregroundColor(Color.primary)
                             .lineLimit(1)
                             .minimumScaleFactor(0.1)
                           
+                    }
+                    HStack {
+                        Image("iRayanKhan").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
+                        Button("Rayan Khan (Contribu𐕣or)") {UIApplication.shared.open(URL(string: "https://twitter.com/iRayanKhan")!)}
+                            .foregroundColor(Color.primary)
                     }
                 }
                 
