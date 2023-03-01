@@ -5,61 +5,17 @@
 //  Created by Kevin Alavik on 2023-02-25.
 //
 
-import SwiftUI
-
-
-extension UIScreen {
-   static let screenWidth = UIScreen.main.bounds.size.width
-   static let screenHeight = UIScreen.main.bounds.size.height
-   static let screenSize = UIScreen.main.bounds.size
-}
-
-func simpleSuccess() {
-    let generator = UINotificationFeedbackGenerator()
-    generator.notificationOccurred(.success)
-}
-
 import Foundation
-
-let repositoryUrl = "https://api.github.com/repos/KevinAlavik/scylla-ios/commits"
-
-let getLatestCommitID: () -> String? = {
-    let semaphore = DispatchSemaphore(value: 0)
-    var commitID: String?
-    
-    let url = URL(string: "\(repositoryUrl)?per_page=1")!
-    let request = URLRequest(url: url)
-    
-    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-        defer { semaphore.signal() }
-        
-        guard let data = data else {
-            print(error?.localizedDescription ?? "Unknown error")
-            return
-        }
-        
-        do {
-            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]],
-               let commit = json.first,
-               let sha = commit["sha"] as? String {
-                commitID = String(sha.prefix(7))
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    task.resume()
-    semaphore.wait()
-    
-    return commitID
-}
+import SwiftUI
 
 let latestCommitID = getLatestCommitID()
 let deviceModel = UIDevice.modelName
 let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 var systemVersion = UIDevice.current.systemVersion
 var sysName = UIDevice.current.systemName
+let repositoryUrl = "https://api.github.com/repos/KevinAlavik/scylla-ios/commits"
+
+
 struct SettingsView: View {
     @State private var showingAlert = false
     @State private var releaseURL: URL? = nil
@@ -74,6 +30,7 @@ struct SettingsView: View {
                             .foregroundColor(.red)
                     }
                 }
+                //MARK: Custom Cert
                 Section("Custom Cert") {
                     HStack {
                         Image(systemName: "checkmark.seal")
@@ -84,6 +41,7 @@ struct SettingsView: View {
                         Button(action: {showingAlert = true}) {Text("Import custom cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
                     }
                 }
+                //MARK: Credits
                 Section("Credits") {
                     HStack {
                         Image("puffer").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
@@ -110,7 +68,7 @@ struct SettingsView: View {
                             .foregroundColor(Color.primary)
                     }
                 }
-                
+                //MARK: Testers
                 Section("Testers") {
                     HStack {
                         
@@ -206,4 +164,49 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
     }
+}
+
+
+extension UIScreen {
+   static let screenWidth = UIScreen.main.bounds.size.width
+   static let screenHeight = UIScreen.main.bounds.size.height
+   static let screenSize = UIScreen.main.bounds.size
+}
+
+
+func simpleSuccess() {
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.success)
+}
+
+let getLatestCommitID: () -> String? = {
+    let semaphore = DispatchSemaphore(value: 0)
+    var commitID: String?
+    
+    let url = URL(string: "\(repositoryUrl)?per_page=1")!
+    let request = URLRequest(url: url)
+    
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        defer { semaphore.signal() }
+        
+        guard let data = data else {
+            print(error?.localizedDescription ?? "Unknown error")
+            return
+        }
+        
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]],
+               let commit = json.first,
+               let sha = commit["sha"] as? String {
+                commitID = String(sha.prefix(7))
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    task.resume()
+    semaphore.wait()
+    
+    return commitID
 }
