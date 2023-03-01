@@ -57,6 +57,7 @@ let getLatestCommitID: () -> String? = {
 
 let latestCommitID = getLatestCommitID()
 let deviceModel = UIDevice.modelName
+let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 var systemVersion = UIDevice.current.systemVersion
 var sysName = UIDevice.current.systemName
 struct ContentView: View {
@@ -139,8 +140,7 @@ struct ContentView: View {
                     HStack {
                         Image(systemName: "moon.stars.fill")
                             .foregroundColor(Color.gray)
-                        Text("Scylla Version 0.1")
-                        //MARK: READ VALUE
+                        Text("Scylla Version " + appVersion!)
                             .foregroundColor(Color.gray)
                     }
                     HStack {
