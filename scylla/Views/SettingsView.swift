@@ -45,18 +45,18 @@ struct SettingsView: View {
                 Section("Credits") {
                     HStack {
                         Image("puffer").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Button("@pufferisadev (Lead Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/pufferisadev")!)}
+                        Button("pufferisadev (Lead Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/pufferisadev")!)}
                             .foregroundColor(Color.primary)
                         
                     }
                     HStack {
                         Image("beef").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Button("@mrbeef777 (Co Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/mrbeef777")!)}
+                        Button("mrbeef777 (Co Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/mrbeef777")!)}
                             .foregroundColor(Color.primary)
                     }
                     HStack {
                         Image("sourcelocation").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Button("@sourcelocation (ApplicationManager)") {UIApplication.shared.open(URL(string: "https://twitter.com/sourceloc")!)}
+                        Button("sourcelocation (ApplicationManager)") {UIApplication.shared.open(URL(string: "https://twitter.com/sourceloc")!)}
                             .foregroundColor(Color.primary)
                             .lineLimit(1)
                             .minimumScaleFactor(0.1)
@@ -82,13 +82,14 @@ struct SettingsView: View {
                 }
                 //MARK: 🤓 Nerd Info
                 Section("🤓 Nerd Info") {
-                    HStack {
+                    
+                    HStack(spacing: 10) {
                         Image(systemName: "gear")
                             .foregroundColor(Color.gray)
                         Text(sysName + " " + systemVersion)
                             .foregroundColor(Color.gray)
                     }
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "iphone")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
@@ -96,7 +97,7 @@ struct SettingsView: View {
                             .foregroundColor(Color.gray)
                     }
             
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "number")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
@@ -104,13 +105,13 @@ struct SettingsView: View {
                             .foregroundColor(Color.gray)
 
                     }
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "moon.stars.fill")
                             .foregroundColor(Color.gray)
                         Text("Scylla Version " + appVersion!)
                             .foregroundColor(Color.gray)
                     }
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "laptopcomputer.and.arrow.down")
                            
                             .foregroundColor(Color.gray)
@@ -118,14 +119,14 @@ struct SettingsView: View {
                             .foregroundColor(Color.gray)
                             
                     }
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "checkmark.seal.fill")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
                         Text("Signed with ")
                             .foregroundColor(Color.gray)
                     }
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "touchid")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)
