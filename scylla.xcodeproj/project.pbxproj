@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A2AD43229AA1E0700102EE8 /* scyllaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD43129AA1E0700102EE8 /* scyllaApp.swift */; };
-		0A2AD43429AA1E0700102EE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD43329AA1E0700102EE8 /* ContentView.swift */; };
+		0A2AD43429AA1E0700102EE8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD43329AA1E0700102EE8 /* SettingsView.swift */; };
 		0A2AD43629AA1E0A00102EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2AD43529AA1E0A00102EE8 /* Assets.xcassets */; };
 		0A2AD43929AA1E0A00102EE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2AD43829AA1E0A00102EE8 /* Preview Assets.xcassets */; };
 		0A2AD44329AA1E0A00102EE8 /* scyllaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44229AA1E0A00102EE8 /* scyllaTests.swift */; };
@@ -17,6 +17,7 @@
 		0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */; };
 		27DB544D29AD37370042FE0A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB544C29AD37370042FE0A /* DeviceManager.swift */; };
 		27DB544F29AF0B630042FE0A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB544E29AF0B630042FE0A /* HomeView.swift */; };
+		27DB545329AF0D100042FE0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB545229AF0D100042FE0A /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 /* Begin PBXFileReference section */
 		0A2AD42E29AA1E0700102EE8 /* scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A2AD43129AA1E0700102EE8 /* scyllaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaApp.swift; sourceTree = "<group>"; };
-		0A2AD43329AA1E0700102EE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0A2AD43329AA1E0700102EE8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0A2AD43529AA1E0A00102EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A2AD43829AA1E0A00102EE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A2AD43E29AA1E0A00102EE8 /* scyllaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scyllaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +51,7 @@
 		0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicatonManager.swift; sourceTree = "<group>"; };
 		27DB544C29AD37370042FE0A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		27DB544E29AF0B630042FE0A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		27DB545229AF0D100042FE0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +139,9 @@
 		27DB545029AF0B6F0042FE0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0A2AD43329AA1E0700102EE8 /* ContentView.swift */,
+				27DB545229AF0D100042FE0A /* ContentView.swift */,
 				27DB544E29AF0B630042FE0A /* HomeView.swift */,
+				0A2AD43329AA1E0700102EE8 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,8 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2AD43429AA1E0700102EE8 /* ContentView.swift in Sources */,
+				0A2AD43429AA1E0700102EE8 /* SettingsView.swift in Sources */,
 				27DB544D29AD37370042FE0A /* DeviceManager.swift in Sources */,
+				27DB545329AF0D100042FE0A /* ContentView.swift in Sources */,
 				0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */,
 				27DB544F29AF0B630042FE0A /* HomeView.swift in Sources */,
 				0A2AD43229AA1E0700102EE8 /* scyllaApp.swift in Sources */,
