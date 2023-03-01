@@ -112,6 +112,7 @@ struct ContentView: View {
                         Text("Justdie")
                     }
                 }
+                //MARK: 🤓 Nerd Info
                 Section("🤓 Nerd Info") {
                     HStack {
                         Image(systemName: "gear")
@@ -126,7 +127,7 @@ struct ContentView: View {
                         Text(deviceModel)
                             .foregroundColor(Color.gray)
                     }
-                    //MARK: GET current device
+            
                     HStack {
                         Image(systemName: "number")
                             .foregroundColor(Color.gray)
