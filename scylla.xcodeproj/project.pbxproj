@@ -7,17 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A2AD43229AA1E0700102EE8 /* scyllaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD43129AA1E0700102EE8 /* scyllaApp.swift */; };
-		0A2AD43429AA1E0700102EE8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD43329AA1E0700102EE8 /* SettingsView.swift */; };
-		0A2AD43629AA1E0A00102EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2AD43529AA1E0A00102EE8 /* Assets.xcassets */; };
-		0A2AD43929AA1E0A00102EE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2AD43829AA1E0A00102EE8 /* Preview Assets.xcassets */; };
-		0A2AD44329AA1E0A00102EE8 /* scyllaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44229AA1E0A00102EE8 /* scyllaTests.swift */; };
-		0A2AD44D29AA1E0A00102EE8 /* scyllaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */; };
-		0A2AD44F29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */; };
-		0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */; };
-		27DB544D29AD37370042FE0A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB544C29AD37370042FE0A /* DeviceManager.swift */; };
-		27DB544F29AF0B630042FE0A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB544E29AF0B630042FE0A /* HomeView.swift */; };
-		27DB545329AF0D100042FE0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB545229AF0D100042FE0A /* ContentView.swift */; };
+		0A9E506829B1003500A93C14 /* scylla in Resources */ = {isa = PBXBuildFile; fileRef = 0A9E506729B1003500A93C14 /* scylla */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,19 +29,9 @@
 
 /* Begin PBXFileReference section */
 		0A2AD42E29AA1E0700102EE8 /* scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A2AD43129AA1E0700102EE8 /* scyllaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaApp.swift; sourceTree = "<group>"; };
-		0A2AD43329AA1E0700102EE8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		0A2AD43529AA1E0A00102EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0A2AD43829AA1E0A00102EE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A2AD43E29AA1E0A00102EE8 /* scyllaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scyllaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A2AD44229AA1E0A00102EE8 /* scyllaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaTests.swift; sourceTree = "<group>"; };
 		0A2AD44829AA1E0A00102EE8 /* scyllaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scyllaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaUITests.swift; sourceTree = "<group>"; };
-		0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scyllaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicatonManager.swift; sourceTree = "<group>"; };
-		27DB544C29AD37370042FE0A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
-		27DB544E29AF0B630042FE0A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		27DB545229AF0D100042FE0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0A9E506729B1003500A93C14 /* scylla */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scylla; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +62,7 @@
 		0A2AD42529AA1E0700102EE8 = {
 			isa = PBXGroup;
 			children = (
-				0A2AD43029AA1E0700102EE8 /* scylla */,
-				0A2AD44129AA1E0A00102EE8 /* scyllaTests */,
-				0A2AD44B29AA1E0A00102EE8 /* scyllaUITests */,
+				0A9E506729B1003500A93C14 /* scylla */,
 				0A2AD42F29AA1E0700102EE8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,62 +75,6 @@
 				0A2AD44829AA1E0A00102EE8 /* scyllaUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0A2AD43029AA1E0700102EE8 /* scylla */ = {
-			isa = PBXGroup;
-			children = (
-				0A2AD43129AA1E0700102EE8 /* scyllaApp.swift */,
-				27DB545029AF0B6F0042FE0A /* Views */,
-				27DB545129AF0B850042FE0A /* Extensions */,
-				0A2AD43529AA1E0A00102EE8 /* Assets.xcassets */,
-				0A2AD43729AA1E0A00102EE8 /* Preview Content */,
-			);
-			path = scylla;
-			sourceTree = "<group>";
-		};
-		0A2AD43729AA1E0A00102EE8 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				0A2AD43829AA1E0A00102EE8 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		0A2AD44129AA1E0A00102EE8 /* scyllaTests */ = {
-			isa = PBXGroup;
-			children = (
-				0A2AD44229AA1E0A00102EE8 /* scyllaTests.swift */,
-			);
-			path = scyllaTests;
-			sourceTree = "<group>";
-		};
-		0A2AD44B29AA1E0A00102EE8 /* scyllaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0A2AD44C29AA1E0A00102EE8 /* scyllaUITests.swift */,
-				0A2AD44E29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift */,
-			);
-			path = scyllaUITests;
-			sourceTree = "<group>";
-		};
-		27DB545029AF0B6F0042FE0A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				27DB545229AF0D100042FE0A /* ContentView.swift */,
-				27DB544E29AF0B630042FE0A /* HomeView.swift */,
-				0A2AD43329AA1E0700102EE8 /* SettingsView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		27DB545129AF0B850042FE0A /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				0A3F75F429AA9BD200E91AFD /* ApplicatonManager.swift */,
-				27DB544C29AD37370042FE0A /* DeviceManager.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2AD43929AA1E0A00102EE8 /* Preview Assets.xcassets in Resources */,
-				0A2AD43629AA1E0A00102EE8 /* Assets.xcassets in Resources */,
+				0A9E506829B1003500A93C14 /* scylla in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,12 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2AD43429AA1E0700102EE8 /* SettingsView.swift in Sources */,
-				27DB544D29AD37370042FE0A /* DeviceManager.swift in Sources */,
-				27DB545329AF0D100042FE0A /* ContentView.swift in Sources */,
-				0A3F75F529AA9BD200E91AFD /* ApplicatonManager.swift in Sources */,
-				27DB544F29AF0B630042FE0A /* HomeView.swift in Sources */,
-				0A2AD43229AA1E0700102EE8 /* scyllaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2AD44329AA1E0A00102EE8 /* scyllaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,8 +220,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2AD44F29AA1E0A00102EE8 /* scyllaUITestsLaunchTests.swift in Sources */,
-				0A2AD44D29AA1E0A00102EE8 /* scyllaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +422,6 @@
 		0A2AD45629AA1E0A00102EE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -529,7 +440,6 @@
 		0A2AD45729AA1E0A00102EE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -548,7 +458,6 @@
 		0A2AD45929AA1E0A00102EE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -565,7 +474,6 @@
 		0A2AD45A29AA1E0A00102EE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
