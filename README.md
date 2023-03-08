@@ -33,6 +33,8 @@ Create a `pull` request to get started!
 
 To help and test the app during developement start [`here`](https://forms.gle/PgVofZFqfLvNnAA7A)
 
+## Support us
+[Patreon](https://www.patreon.com/ScyllaDevelopmentTeam)
 
 ## Feedback
 
