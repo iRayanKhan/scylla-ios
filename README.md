@@ -1,5 +1,7 @@
 # Scylla
 
+[![IPA Build Status](https://github.com/KevinAlavik/scylla-ios/actions/workflows/ios.yml/badge.svg)](https://github.com/KevinAlavik/scylla-ios/actions/workflows/ios.yml)
+
 Probably the best 3rd party app store out there for iOS!
 
 **Currently in beta features like app installing, custom signing certificates and repos are disabled. *WORKING BETA WILL BE OUT SOON***
