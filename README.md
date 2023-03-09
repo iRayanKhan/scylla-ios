@@ -12,10 +12,12 @@ Probably the best 3rd party app store out there for iOS!
 - Custom signing certificates
 - Custom Repos
 - IPA Signer
+
 ## Developers
 
  - [@pufferisadev (Lead Developer)](https://twitter.com/pufferisadev)
  - [@mrbeef777 (Co Developer)](https://twitter.com/mrbeef777)
+
 ## Credits
 
  - [@sourcelocation (ApplicationManager)](https://github.com/leminlimez/Cowabunga/blob/main/Cowabunga/Controllers/ApplicationManager.swift)
