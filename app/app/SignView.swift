@@ -11,7 +11,8 @@ import SwiftUI
 struct SignView: View {
     @State private var showingAlert = false
     var body: some View {
-        Text("Hello World")
+        Text("Work in progress <3")
+            .foregroundColor(.pink)
         .navigationTitle("Scylla")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

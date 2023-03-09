@@ -6,10 +6,10 @@
 //
 import SwiftUI
 let scyllaVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-
 struct HomeView: View {
     @State private var showAlert = false
     @State private var showingAlert = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -50,6 +50,7 @@ struct HomeView: View {
                 }
             }
         }
+        
     }
 }
 
