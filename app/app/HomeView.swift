@@ -6,18 +6,18 @@
 //
 import SwiftUI
 let scyllaVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+var repoData: String = "";
+
 struct HomeView: View {
     @State private var showAlert = false
     @State private var showingAlert = false
-    
+    @State private var mainRepoUrl = "https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/repo.json"
     var body: some View {
         NavigationView {
             List {
-                Section("Failed to fetch repo") {
+                Section("REPO") {
                     HStack {
-                        getRepo.getRepo("")
-                        Text("Failed to fetch repo, Error: 501")
-                            .foregroundColor(.red)
+                        Text(getRepo())
                     }
                 }
                 //MARK: Custom Cert
