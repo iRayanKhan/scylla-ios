@@ -2,7 +2,7 @@
 
 [![IPA Build Status](https://github.com/KevinAlavik/scylla-ios/actions/workflows/ios.yml/badge.svg)](https://github.com/KevinAlavik/scylla-ios/actions/workflows/ios.yml)
 
-Probably the best 3rd party app store out there for iOS!
+**The**  best 3rd party app store out there for iOS!
 
 **Currently in beta features like app installing, custom signing certificates and repos are disabled. *WORKING BETA WILL BE OUT SOON***
 
@@ -15,6 +15,7 @@ Probably the best 3rd party app store out there for iOS!
 - Custom Repos
 - IPA Signer
 
+
 ## Developers
 
  - [@pufferisadev (Lead Developer)](https://twitter.com/pufferisadev)
@@ -22,7 +23,7 @@ Probably the best 3rd party app store out there for iOS!
 
 ## Credits
 
- - [Ryan Khan (Fixed UI)](https://github.com/iRayanKhan)
+ - [Ryan Khan (Fixed some UI related issues)](https://github.com/iRayanKhan)
 
 ## Stats
 ![](https://img.shields.io/github/downloads/KevinAlavik/scylla-ios/total)
@@ -35,7 +36,6 @@ Contributions are always welcome!
 
 Create a `pull` request to get started!
 
-To help and test the app during developement start [`here`](https://forms.gle/PgVofZFqfLvNnAA7A)
 
 ## Support us
 [Patreon](https://www.patreon.com/ScyllaDevelopmentTeam)
