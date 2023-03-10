@@ -8,10 +8,16 @@ import SwiftUI
 let scyllaVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 var repoData: String = "";
 
+
+
+
 struct HomeView: View {
     @State private var showAlert = false
     @State private var showingAlert = false
     @State private var mainRepoUrl = "https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/repo.json"
+    @State private var certImported = true;
+    @State private var showNoCertAlert = false;
+    
     var body: some View {
         NavigationView {
             List {
@@ -23,14 +29,17 @@ struct HomeView: View {
                 //MARK: Custom Cert
                 Section("Custom Cert") {
                     HStack {
-                        Image(systemName: "checkmark.seal")
-                        Button(action: {showingAlert = true}) {Text("Select existing cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
+                        Image(systemName: "square.and.arrow.down")
+                        NavigationLink(destination: ImportCertView()) {
+                            Text("Import Cert")
+                                .foregroundColor(.pink)
+                        }.tint(.pink)
                     }
                     HStack {
-                        Image(systemName: "square.and.arrow.down")
-                        Button(action: {showingAlert = true}) {Text("Import custom cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}
+                        Image(systemName: "checkmark.seal")
+                        Button(action: {showingAlert = true}) {Text("Select Custom Cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("Work in progress"), message: Text("We are working on it "), dismissButton: .default(Text("Got it!")))}
                     }
-                }
+                }.alert(isPresented: $showNoCertAlert) {Alert(title: Text("No Cert Imported!"), message: Text("You havent imported any certs!"), primaryButton: .destructive(Text("Dissmiss")), secondaryButton: .default(Text("Import Cert")))}
             }
             .navigationTitle("Scylla")
             .toolbar {
@@ -50,7 +59,7 @@ struct HomeView: View {
                     }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
                 }
             }
-        }
+        }.onAppear(perform: { if certImported { showNoCertAlert = false } else { showNoCertAlert = true } })
         
     }
 }

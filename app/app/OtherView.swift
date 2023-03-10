@@ -14,7 +14,7 @@ var sysName = UIDevice.current.systemName
 let repositoryUrl = "https://api.github.com/repos/KevinAlavik/scylla-ios/commits"
 
 
-struct SettingsView: View {
+struct OtherView: View {
     @State private var showingAlert = false
     @State private var releaseURL: URL? = nil
     @State private var showAlert = false
@@ -116,9 +116,9 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct OtherView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        OtherView()
     }
 }
 

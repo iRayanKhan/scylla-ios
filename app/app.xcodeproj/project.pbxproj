@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04EE4F0129BBB1EC0035FD63 /* ImportCertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE4F0029BBB1EC0035FD63 /* ImportCertView.swift */; };
 		04FB563D29BB787300B5E3E6 /* getRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB563C29BB787300B5E3E6 /* getRepo.swift */; };
 		0A788E9F29BA3808003CDF42 /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A788E9E29BA3808003CDF42 /* appApp.swift */; };
 		0A788EA129BA3808003CDF42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A788EA029BA3808003CDF42 /* ContentView.swift */; };
@@ -14,7 +15,7 @@
 		0A788EA629BA3809003CDF42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A788EA529BA3809003CDF42 /* Preview Assets.xcassets */; };
 		0AEEFFE729BA38DD008A7541 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEEFFE629BA38DD008A7541 /* DeviceManager.swift */; };
 		0AEEFFEB29BA3944008A7541 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEEFFEA29BA3944008A7541 /* HomeView.swift */; };
-		0AEEFFED29BA395E008A7541 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEEFFEC29BA395E008A7541 /* SettingsView.swift */; };
+		0AEEFFED29BA395E008A7541 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEEFFEC29BA395E008A7541 /* OtherView.swift */; };
 		0AEEFFEF29BA3D97008A7541 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEEFFEE29BA3D97008A7541 /* SignView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04EE4F0029BBB1EC0035FD63 /* ImportCertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportCertView.swift; sourceTree = "<group>"; };
 		04FB563C29BB787300B5E3E6 /* getRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getRepo.swift; sourceTree = "<group>"; };
 		0A788E9B29BA3808003CDF42 /* Scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788E9E29BA3808003CDF42 /* appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appApp.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		0A788EB529BA380A003CDF42 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEEFFE629BA38DD008A7541 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		0AEEFFEA29BA3944008A7541 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		0AEEFFEC29BA395E008A7541 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0AEEFFEC29BA395E008A7541 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		0AEEFFEE29BA3D97008A7541 /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		0AEEFFF029BA3E85008A7541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 		0A788E9D29BA3808003CDF42 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				04EE4F0029BBB1EC0035FD63 /* ImportCertView.swift */,
 				04FB563C29BB787300B5E3E6 /* getRepo.swift */,
 				0AEEFFF029BA3E85008A7541 /* Info.plist */,
 				0AEEFFEA29BA3944008A7541 /* HomeView.swift */,
@@ -105,7 +108,7 @@
 				0A788EA029BA3808003CDF42 /* ContentView.swift */,
 				0A788EA229BA3809003CDF42 /* Assets.xcassets */,
 				0A788EA429BA3809003CDF42 /* Preview Content */,
-				0AEEFFEC29BA395E008A7541 /* SettingsView.swift */,
+				0AEEFFEC29BA395E008A7541 /* OtherView.swift */,
 				0AEEFFEE29BA3D97008A7541 /* SignView.swift */,
 			);
 			path = app;
@@ -249,7 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AEEFFED29BA395E008A7541 /* SettingsView.swift in Sources */,
+				04EE4F0129BBB1EC0035FD63 /* ImportCertView.swift in Sources */,
+				0AEEFFED29BA395E008A7541 /* OtherView.swift in Sources */,
 				0A788EA129BA3808003CDF42 /* ContentView.swift in Sources */,
 				0AEEFFEB29BA3944008A7541 /* HomeView.swift in Sources */,
 				0AEEFFEF29BA3D97008A7541 /* SignView.swift in Sources */,

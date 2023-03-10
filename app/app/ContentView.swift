@@ -23,11 +23,11 @@ struct ContentView: View {
                     Image(systemName: "signature")
                     Text("Sign IPA")
                 }
-            SettingsView()
+            OtherView()
                 .tabItem {
-                    Image(systemName: "gearshape")
+                    Image(systemName: "shippingbox.fill")
                         .tint(.pink)
-                    Text("Settings")
+                    Text("Other")
                         .foregroundColor(.pink)
                 }
         }
