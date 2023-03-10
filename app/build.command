@@ -5,8 +5,10 @@ set -e
 cd "$(dirname "$0")"
 
 WORKING_LOCATION="$(pwd)"
-APPLICATION_NAME=app
+PROJ_NAME=app
+APPLICATION_NAME=Scylla
 CONFIGURATION=Debug
+
 
 if [ ! -d "build" ]; then
 mkdir build
@@ -17,16 +19,16 @@ rm $APPLICATION_NAME.ipa
 fi
 
 # Build .app
-xcodebuild -project "$WORKING_LOCATION/$APPLICATION_NAME.xcodeproj" \
-    -scheme $APPLICATION_NAME \
+xcodebuild -project "$WORKING_LOCATION/$PROJ_NAME.xcodeproj" \
+    -scheme $PROJ_NAME \
     -configuration Debug \
     -derivedDataPath "$WORKING_LOCATION/build/DerivedData" \
     -destination 'generic/platform=iOS' \
     ONLY_ACTIVE_ARCH="NO" \
     CODE_SIGNING_ALLOWED="NO" \
 
-DD_APP_PATH="$WORKING_LOCATION/build/DerivedData/Build/Products/$CONFIGURATION-iphoneos/$APPLICATION_NAME.app"
-TARGET_APP="$WORKING_LOCATION/build/$APPLICATION_NAME.app"
+DD_APP_PATH="$WORKING_LOCATION/build/DerivedData/Build/Products/$CONFIGURATION-iphoneos/$PROJ_NAME.app"
+TARGET_APP="$WORKING_LOCATION/build/$PROJ_NAME.app"
 cp -r "$DD_APP_PATH" "$TARGET_APP"
 
 # Remove signature
