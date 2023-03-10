@@ -85,13 +85,6 @@ struct SettingsView: View {
                             .foregroundColor(Color.gray)
                     }
                     HStack(spacing: 10) {
-                        Image(systemName: "checkmark.seal.fill")
-                            .foregroundColor(Color.gray)
-                            .onTapGesture(perform: simpleSuccess)
-                        Text("Signed with ")
-                            .foregroundColor(Color.gray)
-                    }
-                    HStack(spacing: 10) {
                         Image(systemName: "touchid")
                             .foregroundColor(Color.gray)
                             .onTapGesture(perform: simpleSuccess)

@@ -5,8 +5,7 @@ set -e
 cd "$(dirname "$0")"
 
 WORKING_LOCATION="$(pwd)"
-PROJ_NAME=app
-APPLICATION_NAME=Scylla
+APPLICATION_NAME=app
 CONFIGURATION=Debug
 
 
@@ -19,16 +18,16 @@ rm $APPLICATION_NAME.ipa
 fi
 
 # Build .app
-xcodebuild -project "$WORKING_LOCATION/$PROJ_NAME.xcodeproj" \
-    -scheme $PROJ_NAME \
+xcodebuild -project "$WORKING_LOCATION/$APPLICATION_NAME.xcodeproj" \
+    -scheme $APPLICATION_NAME \
     -configuration Debug \
     -derivedDataPath "$WORKING_LOCATION/build/DerivedData" \
     -destination 'generic/platform=iOS' \
     ONLY_ACTIVE_ARCH="NO" \
     CODE_SIGNING_ALLOWED="NO" \
 
-DD_APP_PATH="$WORKING_LOCATION/build/DerivedData/Build/Products/$CONFIGURATION-iphoneos/$PROJ_NAME.app"
-TARGET_APP="$WORKING_LOCATION/build/$PROJ_NAME.app"
+DD_APP_PATH="$WORKING_LOCATION/build/DerivedData/Build/Products/$CONFIGURATION-iphoneos/Scylla.app"
+TARGET_APP="$WORKING_LOCATION/build/Scylla.app"
 cp -r "$DD_APP_PATH" "$TARGET_APP"
 
 # Remove signature
@@ -43,7 +42,7 @@ fi
 # Package .ipa
 rm -rf Payload
 mkdir Payload
-cp -r $APPLICATION_NAME.app Payload/$APPLICATION_NAME.app
-zip -vr $APPLICATION_NAME.ipa Payload
-rm -rf $APPLICATION_NAME.app
+cp -r Scylla.app Payload/Scylla.app
+zip -vr Scylla.ipa Payload
+rm -rf Scylla.app
 rm -rf Payload
