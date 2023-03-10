@@ -48,13 +48,3 @@ If you have any feedback, please reach out to me at kevin.alavik@icloud.com and 
 ## Optimizations
 
 Our code is designed to be quick and easy. No need for a million different menus and options just a simple page with apps and info and options. Nothing much
-
-## Screenshots
-
-<img src="https://user-images.githubusercontent.com/95900603/221386223-09d1a61d-3dc6-4db3-8c4e-d9cb35fc696c.png" width="300">
-<img src="https://user-images.githubusercontent.com/95900603/221386089-cbd40f19-2ee0-426a-88b7-42f5c7c61252.png" width="300">
-
-## Used By
-
-- All of you guys
-
