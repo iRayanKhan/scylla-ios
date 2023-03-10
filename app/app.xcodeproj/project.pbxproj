@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04FB563D29BB787300B5E3E6 /* getRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB563C29BB787300B5E3E6 /* getRepo.swift */; };
 		0A788E9F29BA3808003CDF42 /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A788E9E29BA3808003CDF42 /* appApp.swift */; };
 		0A788EA129BA3808003CDF42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A788EA029BA3808003CDF42 /* ContentView.swift */; };
 		0A788EA329BA3809003CDF42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A788EA229BA3809003CDF42 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04FB563C29BB787300B5E3E6 /* getRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getRepo.swift; sourceTree = "<group>"; };
 		0A788E9B29BA3808003CDF42 /* Scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788E9E29BA3808003CDF42 /* appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appApp.swift; sourceTree = "<group>"; };
 		0A788EA029BA3808003CDF42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		0A788E9D29BA3808003CDF42 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				04FB563C29BB787300B5E3E6 /* getRepo.swift */,
 				0AEEFFF029BA3E85008A7541 /* Info.plist */,
 				0AEEFFEA29BA3944008A7541 /* HomeView.swift */,
 				0AEEFFE629BA38DD008A7541 /* DeviceManager.swift */,
@@ -252,6 +255,7 @@
 				0AEEFFEF29BA3D97008A7541 /* SignView.swift in Sources */,
 				0AEEFFE729BA38DD008A7541 /* DeviceManager.swift in Sources */,
 				0A788E9F29BA3808003CDF42 /* appApp.swift in Sources */,
+				04FB563D29BB787300B5E3E6 /* getRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +412,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -438,7 +442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

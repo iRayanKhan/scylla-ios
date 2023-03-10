@@ -15,6 +15,7 @@ struct HomeView: View {
             List {
                 Section("Failed to fetch repo") {
                     HStack {
+                        getRepo.getRepo("")
                         Text("Failed to fetch repo, Error: 501")
                             .foregroundColor(.red)
                     }
