@@ -6,6 +6,19 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		048227F329BCEF48009D8573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BCC7D729BCAA3B006C969E /* Assets.xcassets */; };
+		04BCC7DC29BCAA3D006C969E /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 04BCC7D629BCAA3A006C969E /* Preview Content */; };
+		04BCC7E129BCAAF8006C969E /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7E029BCAAF7006C969E /* appApp.swift */; };
+		04BCC7E829BCB62B006C969E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7E329BCB62A006C969E /* HomeView.swift */; };
+		04BCC7E929BCB62B006C969E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7E429BCB62A006C969E /* ContentView.swift */; };
+		04BCC7EA29BCB62B006C969E /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7E529BCB62B006C969E /* SignView.swift */; };
+		04BCC7EB29BCB62B006C969E /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7E629BCB62B006C969E /* OtherView.swift */; };
+		04BCC7EC29BCB62B006C969E /* ImportCertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7E729BCB62B006C969E /* ImportCertView.swift */; };
+		04BCC7F129BCB6DC006C969E /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7F029BCB6DC006C969E /* functions.swift */; };
+		04BCC7F229BCB6DC006C969E /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7EF29BCB6DB006C969E /* DeviceManager.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0A788EAC29BA380A003CDF42 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +37,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04BCC7D629BCAA3A006C969E /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
+		04BCC7D729BCAA3B006C969E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04BCC7E029BCAAF7006C969E /* appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appApp.swift; sourceTree = "<group>"; };
+		04BCC7E329BCB62A006C969E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = app/Views/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		04BCC7E429BCB62A006C969E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = app/Views/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		04BCC7E529BCB62B006C969E /* SignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignView.swift; path = app/Views/SignView.swift; sourceTree = SOURCE_ROOT; };
+		04BCC7E629BCB62B006C969E /* OtherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OtherView.swift; path = app/Views/OtherView.swift; sourceTree = SOURCE_ROOT; };
+		04BCC7E729BCB62B006C969E /* ImportCertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImportCertView.swift; path = app/Views/ImportCertView.swift; sourceTree = SOURCE_ROOT; };
+		04BCC7EF29BCB6DB006C969E /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		04BCC7F029BCB6DC006C969E /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		04BCC7F729BCBEC0006C969E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A788E9B29BA3808003CDF42 /* Scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EAB29BA380A003CDF42 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EB529BA380A003CDF42 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +78,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04BCC7F329BCBD87006C969E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04BCC7E429BCB62A006C969E /* ContentView.swift */,
+				04BCC7E329BCB62A006C969E /* HomeView.swift */,
+				04BCC7E729BCB62B006C969E /* ImportCertView.swift */,
+				04BCC7E629BCB62B006C969E /* OtherView.swift */,
+				04BCC7E529BCB62B006C969E /* SignView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04BCC7F429BCBD9A006C969E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04BCC7EF29BCB6DB006C969E /* DeviceManager.swift */,
+				04BCC7F029BCB6DC006C969E /* functions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0A788E9229BA3808003CDF42 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +120,12 @@
 		0A788E9D29BA3808003CDF42 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				04BCC7F729BCBEC0006C969E /* Info.plist */,
+				04BCC7F429BCBD9A006C969E /* Extensions */,
+				04BCC7F329BCBD87006C969E /* Views */,
+				04BCC7E029BCAAF7006C969E /* appApp.swift */,
+				04BCC7D729BCAA3B006C969E /* Assets.xcassets */,
+				04BCC7D629BCAA3A006C969E /* Preview Content */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -147,6 +198,7 @@
 				TargetAttributes = {
 					0A788E9A29BA3808003CDF42 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1420;
 					};
 					0A788EAA29BA380A003CDF42 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -183,6 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048227F329BCEF48009D8573 /* Assets.xcassets in Resources */,
+				04BCC7DC29BCAA3D006C969E /* Preview Content in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +261,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BCC7E129BCAAF8006C969E /* appApp.swift in Sources */,
+				04BCC7F229BCB6DC006C969E /* DeviceManager.swift in Sources */,
+				04BCC7EA29BCB62B006C969E /* SignView.swift in Sources */,
+				04BCC7F129BCB6DC006C969E /* functions.swift in Sources */,
+				04BCC7E829BCB62B006C969E /* HomeView.swift in Sources */,
+				04BCC7EC29BCB62B006C969E /* ImportCertView.swift in Sources */,
+				04BCC7E929BCB62B006C969E /* ContentView.swift in Sources */,
+				04BCC7EB29BCB62B006C969E /* OtherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
@@ -383,6 +446,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scylla.app;
 				PRODUCT_NAME = Scylla;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -394,6 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
@@ -423,6 +488,7 @@
 		0A788EC329BA380A003CDF42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -441,6 +507,7 @@
 		0A788EC429BA380A003CDF42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -459,6 +526,7 @@
 		0A788EC629BA380A003CDF42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -475,6 +543,7 @@
 		0A788EC729BA380A003CDF42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
