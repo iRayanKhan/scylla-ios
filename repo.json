@@ -1,5 +1,19 @@
 {
   "repoName":"base",
   "repoAuthor":"puffer",
-  "repoVersion":1.0
+  "repoVersion":1.0,
+  "apps":{
+    "1": {
+      "name":"Cowabunga",
+      "version":"8.1.2",
+      "ipaLink":"https://github.com/leminlimez/Cowabunga/releases/download/v8.1.2/Cowabunga.ipa",
+      "iconLink":"https://user-images.githubusercontent.com/52459150/215552092-9dc1e029-da35-43da-867f-17279e3dc180.png"
+    },
+    "2": {
+      "name":"Scylla",
+      "version":"0",
+      "ipaLink":"test",
+      "iconLink":"test"
+    }
+  }
 }

@@ -18,7 +18,7 @@ struct HomeView: View {
     @State private var certImported = true;
     @State private var showNoCertAlert = false;
     @State private var repoName: String = ""
-    @S
+    @State private var repoData: String = ""
     var body: some View {
         NavigationView {
             List {
@@ -33,7 +33,7 @@ struct HomeView: View {
                 }.onAppear {
                     getRepo(repoUrl: "https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/repo.json") { (repoData) in
                         DispatchQueue.main.async {
-                            if let name = repoData?["repoName"] as? String {
+                            if let name = repoData?["apps"] as? String {
                                 self.repoName = name
                             } else {
                                 self.repoName = "Failed to load repo data"
