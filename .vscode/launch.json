@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Flash",
-            "type": "fdb",
+            "command": "cd app && ./build.command",
+            "name": "Build IPA",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/your.swf"
+            "type": "node-terminal"
         }
     ]
 }

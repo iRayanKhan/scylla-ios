@@ -6,7 +6,6 @@
 //
 import Foundation
 import SwiftUI
-import UniformTypeIdentifiers
 
 struct SignView: View {
     @State private var showingAlert = false
@@ -20,11 +19,11 @@ struct SignView: View {
             
             HStack {
                 Button("Select IPA") {
-                    openDocumentPicker(fileExtension: "json")
+                    openDocumentPicker(fileExtension: "json", allowMultiple: false)
                 }.buttonStyle(.borderedProminent).tint(.pink)
                 HStack {
                     Button("Select Cert") {
-                        openDocumentPicker(fileExtension: "yml")
+                        openDocumentPicker(fileExtension: "yml", allowMultiple: false)
                     }.buttonStyle(.borderedProminent).tint(.pink)
                 }
             }
@@ -74,13 +73,6 @@ struct SignView: View {
                     }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
                 }
             }
-    }
-    func openDocumentPicker(fileExtension: String) {
-        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType(filenameExtension: fileExtension)!])
-        documentPicker.modalPresentationStyle = .overFullScreen
-        
-        // Present the document picker
-        UIApplication.shared.windows.first?.rootViewController?.present(documentPicker, animated: true, completion: nil)
     }
 }
 
