@@ -6,13 +6,56 @@
 //
 import Foundation
 import SwiftUI
-
+import UniformTypeIdentifiers
 
 struct SignView: View {
     @State private var showingAlert = false
+    @State private var customAppName: String = ""
+    @State private var customBundleId: String = ""
     var body: some View {
-        Text("Work in progress <3")
-            .foregroundColor(.pink)
+        VStack {
+            Text("Sign IPA")
+                .font(.system(size: 30))
+                .position(x: UIScreen.screenWidth/2, y:500)
+            
+            HStack {
+                Button("Select IPA") {
+                    openDocumentPicker(fileExtension: "json")
+                }.buttonStyle(.borderedProminent).tint(.pink)
+                HStack {
+                    Button("Select Cert") {
+                        openDocumentPicker(fileExtension: "yml")
+                    }.buttonStyle(.borderedProminent).tint(.pink)
+                }
+            }
+            
+            HStack {
+                TextField("Custom App Name: ", text: $customAppName)
+                    .font(.system(size: 10))
+                    .frame(width: 218)
+            }
+            .textFieldStyle(.roundedBorder)
+            .frame(width: 305)
+            HStack {
+                TextField("Custom Bundle ID: ", text: $customBundleId)
+                    .font(.system(size: 10))
+                    .frame(width: 218)
+            }
+            .textFieldStyle(.roundedBorder)
+            .frame(width: 305)
+            
+            HStack {
+                Button() {
+                } label: {
+                    Text("Sign")
+                        .frame(width: 195)
+                }
+                .frame(maxWidth: .infinity)
+                .buttonStyle(.borderedProminent)
+                .tint(.pink)
+            }
+        }
+        .position(x: UIScreen.screenWidth/2, y: UIScreen.screenHeight/2-350)
         .navigationTitle("Scylla")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -31,6 +74,13 @@ struct SignView: View {
                     }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
                 }
             }
+    }
+    func openDocumentPicker(fileExtension: String) {
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType(filenameExtension: fileExtension)!])
+        documentPicker.modalPresentationStyle = .overFullScreen
+        
+        // Present the document picker
+        UIApplication.shared.windows.first?.rootViewController?.present(documentPicker, animated: true, completion: nil)
     }
 }
 

@@ -26,20 +26,16 @@ extension UIScreen {
 struct ImportCertView: View {
     @State private var showingAlert = false
     @State private var certPass: String = ""
-    
+    @State private var selectedFile: URL?
     var body: some View {
-        Text("Select cert")
+        Text("Import Certificate")
             .font(.system(size: 30))
             .position(x: UIScreen.screenWidth/2, y: 150)
         
         VStack {
             HStack {
-                Button("Select p12") {
-                    openDocumentPicker(fileExtension: "p12")
-                }.buttonStyle(.borderedProminent).tint(.pink)
-                
-                Button("Select mobileprovision") {
-                    openDocumentPicker(fileExtension: "mobileprovision")
+                Button("Select p12 and mobileprovision") {
+                    openDocumentPicker(fileExtensions: ["json", "md"], allowMultiple: true)
                 }.buttonStyle(.borderedProminent).tint(.pink)
             }
             
@@ -48,12 +44,15 @@ struct ImportCertView: View {
                     .font(.system(size: 10))
             }
             .textFieldStyle(.roundedBorder)
-            .frame(width: 305)
+            .frame(width: 260)
             
             HStack {
-                Button("Add cert") {
-                    // action for add cert button
+                Button() {
+                } label: {
+                    Text("Add certificate")
+                        .frame(width: 235)
                 }
+                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .tint(.pink)
             }
@@ -61,10 +60,16 @@ struct ImportCertView: View {
         .position(x: UIScreen.screenWidth/2, y: 0)
     }
     
-    func openDocumentPicker(fileExtension: String) {
-        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType(filenameExtension: fileExtension)!])
+    func openDocumentPicker(fileExtensions: [String], allowMultiple: Bool) {
+        var contentTypes: [UTType] = []
+        for fileExtension in fileExtensions {
+            if let utType = UTType(filenameExtension: fileExtension) {
+                contentTypes.append(utType)
+            }
+        }
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: contentTypes)
         documentPicker.modalPresentationStyle = .overFullScreen
-        
+        documentPicker.allowsMultipleSelection = allowMultiple
         // Present the document picker
         UIApplication.shared.windows.first?.rootViewController?.present(documentPicker, animated: true, completion: nil)
     }

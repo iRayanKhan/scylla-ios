@@ -30,7 +30,7 @@ struct ContentView: View {
                     Text("Other")
                         .foregroundColor(.pink)
                 }
-        }
+        }.accentColor(.pink) 
     }
 }
 

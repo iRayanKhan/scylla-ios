@@ -17,13 +17,28 @@ struct HomeView: View {
     @State private var mainRepoUrl = "https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/repo.json"
     @State private var certImported = true;
     @State private var showNoCertAlert = false;
-    
+    @State private var repoName: String = ""
+    @S
     var body: some View {
         NavigationView {
             List {
-                Section("REPO") {
+                Section(repoName) {
                     HStack {
-                        Text(getRepo())
+                        if !repoName.isEmpty {
+                            Text(repoName)
+                        } else {
+                            Text("Loading repo data...")
+                        }
+                    }
+                }.onAppear {
+                    getRepo(repoUrl: "https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/repo.json") { (repoData) in
+                        DispatchQueue.main.async {
+                            if let name = repoData?["repoName"] as? String {
+                                self.repoName = name
+                            } else {
+                                self.repoName = "Failed to load repo data"
+                            }
+                        }
                     }
                 }
                 //MARK: Custom Cert
@@ -31,15 +46,15 @@ struct HomeView: View {
                     HStack {
                         Image(systemName: "square.and.arrow.down")
                         NavigationLink(destination: ImportCertView()) {
-                            Text("Import Cert")
+                            Text("Import Certificate")
                                 .foregroundColor(.pink)
                         }.tint(.pink)
                     }
                     HStack {
                         Image(systemName: "checkmark.seal")
-                        Button(action: {showingAlert = true}) {Text("Select Custom Cert").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("Work in progress"), message: Text("We are working on it "), dismissButton: .default(Text("Got it!")))}
+                        Button(action: {showingAlert = true}) {Text("Select Custom Certificate").tint(.pink)}.alert(isPresented: $showingAlert) {Alert(title: Text("Work in progress"), message: Text("We are working on it "), dismissButton: .default(Text("Got it!")))}
                     }
-                }.alert(isPresented: $showNoCertAlert) {Alert(title: Text("No Cert Imported!"), message: Text("You havent imported any certs!"), primaryButton: .destructive(Text("Dissmiss")), secondaryButton: .default(Text("Import Cert")))}
+                }.alert(isPresented: $showNoCertAlert) {Alert(title: Text("No Cert Imported!"), message: Text("You havent imported any certs!"), primaryButton: .destructive(Text("Dissmiss")), secondaryButton: .default(Text("Import Certificate")))}
             }
             .navigationTitle("Scylla")
             .toolbar {
