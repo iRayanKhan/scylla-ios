@@ -2,7 +2,7 @@
 //  HomeView.swift
 //  scylla
 //
-//  Created by Kevin Alavik on 2/28/23.
+//  Created by Rayan Khan on 2/28/23.
 //
 import SwiftUI
 import Kingfisher
@@ -29,10 +29,10 @@ struct HomeView: View {
                 Section(header: Text(repoName), footer: Text("Repo Author: " + repoAuthor + ", Repo Version: " + repoVer)) {
                     if !repoName.isEmpty {
                         // do something with the repoData array here
-                        ForEach($repoData.apps, id: \.self) { data in
+                        ForEach(repoData.apps, id: \.self) { data in
                           HStack {
                             Text(data.name)
-                              KFImage(URL(string: data.iconLink))
+                            KFImage(URL(data.iconLink))
                           }
                         }
                     } else {
