@@ -24,47 +24,42 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text(repoName), footer: Text("Repo Author: " + repoAuthor + ", Repo Version: " + repoVer)) {
-                    HStack {
-                        if !repoName.isEmpty {
-                            
-                        } else {
-                            Text("Loading repo data...")
-                        }
-                    }
-                }.onAppear {
-                    getRepo(repoUrl: "https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/repo.json") { (repoData) in
-                        DispatchQueue.main.async {
-                            if let name = repoData?["repoName"] as? String {
-                                self.repoName = name
-                            } else {
-                                self.repoName = "Failed to load repo name"
-                                self.repoAuthor = "Failed to load repo author"
-                                self.repoVer = "Failed to load repo version"
-                                self.repoData = []
-                            }
-                            if let author = repoData?["repoAuthor"] as? String {
-                                self.repoAuthor = author
-                            }
-                            if let ver = repoData?["repoVersion"] as? Double {
-                                self.repoVer = "\(ver)"
-                            }
-                            if let apps = repoData?["apps"] as? [[String: Any]] {
-                                for app in apps {
-                                    if let data = app as? String {
-                                        var appName = app["name"]
-                                        var appLink = app["ipaLink"]
-                                        var appIcon = app["iconLink"]
-                                        var appVersion = app["version"]
-                                        var appInfo = appName + " " + appLink + " " + appIcon + " " + appVersion
-                                        print(appInfo)
-                                    }
-                                }
-                            }
-
-                        }
-                    }
-                }
+                           Section(header: Text(repoName), footer: Text("Repo Author: " + repoAuthor + ", Repo Version: " + repoVer)) {
+                               HStack {
+                                   if !repoName.isEmpty {
+                                       // do something with the repoData array here
+                                   } else {
+                                       Text("Loading repo data...")
+                                   }
+                               }
+                           }
+                           .onAppear {
+                               getRepo(repoUrl: "https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/repo.json") { (repoData) in
+                                   DispatchQueue.main.async {
+                                       if let name = repoData?["repoName"] as? String {
+                                           self.repoName = name
+                                       } else {
+                                           self.repoName = "Failed to load repo name"
+                                           self.repoAuthor = "Failed to load repo author"
+                                           self.repoVer = "Failed to load repo version"
+                                           self.repoData = []
+                                       }
+                                       if let author = repoData?["repoAuthor"] as? String {
+                                           self.repoAuthor = author
+                                       }
+                                       if let ver = repoData?["repoVersion"] as? Double {
+                                           self.repoVer = "\(ver)"
+                                       }
+                                       if let apps = repoData?["apps"] as? [[String: Any]] {
+                                           for app in apps {
+                                               if let data = app as? String { // example of accessing data
+                                                   self.repoData.append(app)
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                           }
                 //MARK: Custom Cert
                 Section("Custom Cert") {
                     HStack {
