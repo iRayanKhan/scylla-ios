@@ -13,6 +13,9 @@
 - Custom Repos
 - IPA Signer
 
+## Piracy
+
+### We **do not** support or take credit for any pirated apps used with Scylla
 
 ## Developers
 
