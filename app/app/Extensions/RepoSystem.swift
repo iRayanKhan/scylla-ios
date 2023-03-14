@@ -14,6 +14,9 @@ struct RepoData: Decodable {
     let Tweaks: [AppInfo]
     let Jailbreaks: [AppInfo]
     let Programming: [AppInfo]
+    //MARK: SCARLET REPO FORMAT 
+    let META: [RepoInfo]
+    let Tweaked: [AppInfo]
 }
 
 
@@ -21,6 +24,8 @@ struct RepoInfo: Decodable {
     let repoName: String
     let repoAuthor: String
     let repoVersion: Int
+    //MARK: SCARLET REPO FORMAT
+    let repoIcon: String
 }
 
 struct AppInfo: Decodable {
@@ -30,6 +35,19 @@ struct AppInfo: Decodable {
     let ipa: String
     let icon: String
     let iOS: String
+    //MARK: SCARLET REPO FORMAT
+    let down: String
+    let category: String
+    let banner: String
+    let bundleID: String
+    let description: String
+    let contact: [ContactInfo]
+    let screenshots: [String]
+}
+
+struct ContactInfo: Decodable {
+    let web: String   
+    let twitter: String
 }
 
 class RepoModel: ObservableObject {  @Published var items = [RepoData]();
