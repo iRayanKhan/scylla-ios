@@ -3,6 +3,7 @@
     "repoName":"Template Repo",
     "repoAuthor":"your name",
     "repoVersion":1.0,
+    "repoIcon":"some url to an image"
   ],
   "Utilities":[
         {
