@@ -17,6 +17,8 @@ struct RepoData: Decodable {
     //MARK: SCARLET REPO FORMAT 
     let META: [RepoInfo]
     let Tweaked: [AppInfo]
+    let Emulators: [AppInfo]
+    let Other: [AppInfo]
 }
 
 
