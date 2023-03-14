@@ -1,65 +1,139 @@
 {
   "Info":[
-    "repoName":"Placeholder Repo",
-    "repoAuthor":"puffer",
+    "repoName":"Template Repo",
+    "repoAuthor":"your name",
     "repoVersion":1.0,
   ],
   "Utilities":[
         {
-            "name":"placeholder",
-            "developer":"placeholder",
-            "version":0,
-            "ipa":"placeholder",
-            "icon":"placeholder",
-            "iOS":"placeholder",
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
         },
         {
-            "name":"placeholder",
-            "developer":"placeholder",
-            "version":0,
-            "ipa":"placeholder",
-            "icon":"placeholder",
-            "iOS":"placeholder",
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
         }
    ],
     "Games":[
         {
-            "name":"placeholder",
-            "developer":"placeholder",
-            "version":0,
-            "ipa":"placeholder",
-            "icon":"placeholder",
-            "iOS":"placeholder",
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
+        },
+        {
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
         }
     ],
     "Tweaks":[
         {
-            "name":"placeholder",
-            "developer":"placeholder",
-            "version":0,
-            "ipa":"placeholder",
-            "icon":"placeholder",
-            "iOS":"placeholder",
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
+        },
+        {
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
         }
     ],
     "Jailbreaks":[
         {
-            "name":"placeholder",
-            "developer":"placeholder",
-            "version":0,
-            "ipa":"placeholder",
-            "icon":"placeholder",
-            "iOS":"placeholder",
-        }
-    ],
-    "Programming":[
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
+        },
         {
-            "name":"placeholder",
-            "developer":"placeholder",
-            "version":0,
-            "ipa":"placeholder",
-            "icon":"placeholder",
-            "iOS":"placeholder",
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
         }
     ],
+    "Developer Tools":[
+        {
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
+        },
+        {
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
+        }
+    ],
+    "Education":[
+        {
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
+        },
+        {
+            "name":"App Name",
+            "developer":"App Developers name",
+            "version":0, 
+            "ipa":"Link to apps ipa file",
+            "icon":"Link to apps icon",
+            "iOS":"Supported iOS Versions",
+            "description":"An description of the app such as, what it does, how to use it and other info",
+            "color":"Apps theme color, example: #db4658"
+        }
+    ]
 }
