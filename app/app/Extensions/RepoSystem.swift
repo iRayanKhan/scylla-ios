@@ -35,6 +35,7 @@ struct AppInfo: Decodable {
     let ipa: String
     let icon: String
     let iOS: String
+    let color: String
     //MARK: SCARLET REPO FORMAT
     let down: String
     let category: String
