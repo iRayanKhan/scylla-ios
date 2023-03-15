@@ -25,7 +25,8 @@ struct RepoData: Decodable {
 struct RepoInfo: Decodable {
     let repoName: String
     let repoAuthor: String
-    let repoVersion: Int
+    let repoVersion: Int, String
+    let repoDescription: String
     //MARK: SCARLET REPO FORMAT
     let repoIcon: String
 }
