@@ -52,6 +52,10 @@ struct AppInfo: Decodable {
     let description: String
     let contact: [ContactInfo]
     let screenshots: [String]
+    let changelog: String
+    let appstore: String
+    let debs: [String]
+    let dev: String
     //MARK: ALTSTORE REPO FORMAT
     let versions: [Versions]
     let versionDate: String
@@ -70,6 +74,7 @@ struct AppInfo: Decodable {
 struct ContactInfo: Decodable {
     let web: String   
     let twitter: String
+    let _: String
 }
 
 struct Versions: Decodable {
