@@ -13,7 +13,7 @@ struct HomeView: View {
   @State private var showAlert = false
   @State private var showingAlert = false
   @State private var mainRepoUrl =
-    "https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/repo.json"
+    "https://puffer.is-a.dev/scylla-ios/cdn/repoTemplate.json"
   @State private var certImported = true
   @State private var showNoCertAlert = false
   @ObservedObject var repoModel = RepoModel()
