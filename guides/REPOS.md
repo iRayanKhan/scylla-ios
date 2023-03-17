@@ -16,7 +16,7 @@ Its not very hard making an repo you just need to follow this code:
     {
         "repoName":"Template Repo",
         "repoAuthor":"your name",
-        "repoVersion":1.0,
+        "repoVersion":"1.0",
         "repoIcon":"some url to an image",
         "repoDescription":"short description about the repo"
     }
@@ -25,7 +25,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -35,7 +35,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -47,7 +47,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -57,7 +57,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -69,7 +69,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -79,7 +79,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -88,10 +88,11 @@ Its not very hard making an repo you just need to follow this code:
         }
     ],
     "Jailbreaks":[
+        
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -101,7 +102,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -113,7 +114,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -123,7 +124,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -135,7 +136,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
@@ -145,7 +146,7 @@ Its not very hard making an repo you just need to follow this code:
         {
             "name":"App Name",
             "developer":"App Developers name",
-            "version":0, 
+            "version":"0", 
             "ipa":"Link to apps ipa file",
             "icon":"Link to apps icon",
             "iOS":"Supported iOS Versions",
