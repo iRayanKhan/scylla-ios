@@ -32,7 +32,7 @@ struct OtherView: View {
                     }
                     HStack {
                         Image("beef").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
-                        Button("mrbeef777 (Co Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/mrbeef777")!)}
+                        Button("mrbeef777 (Developer)") {UIApplication.shared.open(URL(string: "https://twitter.com/mrbeef777")!)}
                             .foregroundColor(Color.primary)
                     }
                     HStack {

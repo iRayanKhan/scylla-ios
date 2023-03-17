@@ -19,13 +19,18 @@ struct RepoData: Decodable {
     let Tweaked: [AppInfo]
     let Emulators: [AppInfo]
     let Other: [AppInfo]
+    //MARK: ALTSTORE REPO FROMAT
+    let name: String
+    let indentifier: String
+    let sourceURL: String
+    let apps: [AppInfo]
 }
 
 
 struct RepoInfo: Decodable {
     let repoName: String
     let repoAuthor: String
-    let repoVersion: String 
+    let repoVersion:  String
     let repoDescription: String
     //MARK: SCARLET REPO FORMAT
     let repoIcon: String
@@ -34,7 +39,7 @@ struct RepoInfo: Decodable {
 struct AppInfo: Decodable {
     let name: String
     let developer: String
-    let version: Int
+    let version: String
     let ipa: String
     let icon: String
     let iOS: String
@@ -47,11 +52,42 @@ struct AppInfo: Decodable {
     let description: String
     let contact: [ContactInfo]
     let screenshots: [String]
+    let changelog: String
+    let appstore: String
+    let debs: [String]
+    let dev: String
+    //MARK: ALTSTORE REPO FORMAT
+    let versions: [Versions]
+    let versionDate: String
+    let versionDescription: String
+    let downloadURL: String
+    let localizedDescription: String
+    let iconURL: String
+    let tintColor: String
+    let size: Int
+    let screenshotURLs: [String]
+    let permissions: [Permissions]
+    let bundleIdentifier: String
+    let developerName: String,
 }
 
 struct ContactInfo: Decodable {
     let web: String   
     let twitter: String
+    let _: String
+}
+
+struct Versions: Decodable {
+    let version: String
+    let date: String
+    let localizedDescription: String
+    let downloadURL: String
+    let size: Int
+}
+
+struct Permissions: Decodable {
+    let type: String
+    let usageDescription: String
 }
 
 class RepoModel: ObservableObject {  @Published var items = [RepoData]();
