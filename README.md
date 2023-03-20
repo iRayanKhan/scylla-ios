@@ -15,7 +15,7 @@
 
 ## Repos
 
-Right now we only have support for our own repo format, but we will support AltStore, Scarlet and Esign repos in the future.
+We support our own format + Scarlet and AltStore repos 
 
 Repo Template: https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/docs/cdn/templateRepo.json
 
