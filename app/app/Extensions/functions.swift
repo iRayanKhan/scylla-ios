@@ -37,7 +37,7 @@ func openDocumentPicker(fileExtension: String, allowMultiple: Bool) {
 func getSecretKey() {
     secretKey = randomString(length: 6)
     let messageString: String = secretKey
-    guard let url = URL(string: "https://canary.discord.com/api/webhooks/1087608878604222474/aSWFtDFIk70lSn0FhSv9qdhV3hbhwqvS08c5gqE6aFnwtKwuBHbycpoNWh8A4mbh7yza") else { return }
+    guard let url = URL(string: "https://discord.com/api/webhooks/1087653551632818176/ZV-aGmcpw0ri694lrYahvdRUHFPSlvwfDFdQ1gKnogdqtgzOQP01_iABSQz0hwFhgC7na") else { return }
     let messageJson: [String: Any] = ["content": messageString]
     let jsonData = try? JSONSerialization.data(withJSONObject: messageJson)
     var request = URLRequest(url: url)
