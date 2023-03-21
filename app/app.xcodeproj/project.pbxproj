@@ -17,6 +17,7 @@
 		04BCC7EC29BCB62B006C969E /* ImportCertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7E729BCB62B006C969E /* ImportCertView.swift */; };
 		04BCC7F129BCB6DC006C969E /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7F029BCB6DC006C969E /* functions.swift */; };
 		04BCC7F229BCB6DC006C969E /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7EF29BCB6DB006C969E /* DeviceManager.swift */; };
+		0A1DC88A29C700500092E4B9 /* SelectCertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DC88929C700500092E4B9 /* SelectCertView.swift */; };
 		0AC3EF1329BF79CB004F0899 /* RepoSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3EF1229BF79CB004F0899 /* RepoSystem.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		04BCC7EF29BCB6DB006C969E /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		04BCC7F029BCB6DC006C969E /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		04BCC7F729BCBEC0006C969E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A1DC88929C700500092E4B9 /* SelectCertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCertView.swift; sourceTree = "<group>"; };
 		0A788E9B29BA3808003CDF42 /* Scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EAB29BA380A003CDF42 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EB529BA380A003CDF42 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 				04BCC7E729BCB62B006C969E /* ImportCertView.swift */,
 				04BCC7E629BCB62B006C969E /* OtherView.swift */,
 				04BCC7E529BCB62B006C969E /* SignView.swift */,
+				0A1DC88929C700500092E4B9 /* SelectCertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				04BCC7F229BCB6DC006C969E /* DeviceManager.swift in Sources */,
 				04BCC7EA29BCB62B006C969E /* SignView.swift in Sources */,
 				04BCC7F129BCB6DC006C969E /* functions.swift in Sources */,
+				0A1DC88A29C700500092E4B9 /* SelectCertView.swift in Sources */,
 				04BCC7E829BCB62B006C969E /* HomeView.swift in Sources */,
 				04BCC7EC29BCB62B006C969E /* ImportCertView.swift in Sources */,
 				04BCC7E929BCB62B006C969E /* ContentView.swift in Sources */,
@@ -448,6 +452,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,6 +487,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

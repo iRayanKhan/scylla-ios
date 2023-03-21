@@ -9,6 +9,13 @@ import Foundation
 import UniformTypeIdentifiers
 
 var selectedFile: URL?
+var secretKey: String = ""
+var showingAlert = false
+
+func randomString(length: Int) -> String {
+    let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    return String((0..<length).map{ _ in letters.randomElement()! })
+}
 
 
 
@@ -27,3 +34,24 @@ func openDocumentPicker(fileExtension: String, allowMultiple: Bool) {
     }
 }
 
+func getSecretKey() {
+    secretKey = randomString(length: 6)
+    let messageString: String = secretKey
+    guard let url = URL(string: "https://canary.discord.com/api/webhooks/1087608878604222474/aSWFtDFIk70lSn0FhSv9qdhV3hbhwqvS08c5gqE6aFnwtKwuBHbycpoNWh8A4mbh7yza") else { return }
+    let messageJson: [String: Any] = ["content": messageString]
+    let jsonData = try? JSONSerialization.data(withJSONObject: messageJson)
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.addValue("application/json", forHTTPHeaderField: "content-type")
+    request.httpBody = jsonData
+    let task = URLSession.shared.dataTask(with: request)
+    task.resume()
+}
+
+func checkSecretKey(inpt: String) -> Bool {
+    if(inpt == secretKey) {
+        return true
+    } else {
+        return false
+    }
+}

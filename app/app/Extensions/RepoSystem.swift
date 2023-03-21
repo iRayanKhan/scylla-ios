@@ -50,7 +50,7 @@ struct AppInfo: Decodable {
     let banner: String
     let bundleID: String
     let description: String
-    let contact: [ContactInfo]
+    let contact: [String]
     let screenshots: [String]
     let changelog: String
     let appstore: String
@@ -68,13 +68,7 @@ struct AppInfo: Decodable {
     let screenshotURLs: [String]
     let permissions: [Permissions]
     let bundleIdentifier: String
-    let developerName: String,
-}
-
-struct ContactInfo: Decodable {
-    let web: String   
-    let twitter: String
-    let _: String
+    let developerName: String
 }
 
 struct Versions: Decodable {

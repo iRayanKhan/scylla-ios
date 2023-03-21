@@ -52,6 +52,14 @@ struct OtherView: View {
                         Image("JustDie").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
                         Text("Justdie")
                     }
+                    HStack {
+                        Image("Madhav").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
+                        Text("Madhav")
+                    }
+                    HStack {
+                        Image("Kixrd").resizable().frame(width: 25.0, height: 25.0).cornerRadius(5)
+                        Text("Kixrd")
+                    }
                 }
                 //MARK: 🤓 Nerd Info
                 Section("🤓 Nerd Info") {
@@ -123,11 +131,7 @@ struct OtherView_Previews: PreviewProvider {
 }
 
 
-extension UIScreen {
-   static let screenWidth = UIScreen.main.bounds.size.width
-   static let screenHeight = UIScreen.main.bounds.size.height
-   static let screenSize = UIScreen.main.bounds.size
-}
+
 
 
 func simpleSuccess() {

@@ -5,9 +5,46 @@
 //  Created by Kevin Alavik on 2/28/23.
 //
 import SwiftUI
+import UniformTypeIdentifiers
+import Foundation
 
 let scyllaVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 var repoData: String = ""
+
+struct PrivateBeta: View {
+    @Environment(\.dismiss) var dismiss
+    @State private var key: String = ""
+    var body: some View {
+        Image(systemName: "exclamationmark.triangle").resizable().frame(width: 75.0, height: 75.0)
+            .tint(.yellow)
+            .padding()
+            .onAppear {
+                getSecretKey()
+            }
+        Text("This is a private beta!")
+            .font(.headline)
+        Text("Please do not share it!")
+            .font(.caption)
+            .padding()
+        VStack {
+            Text("Secret key (Check the #secret-keys channel for the newest key)")
+            TextField("******", text: $key)
+        }.frame(width: 280).textFieldStyle(.roundedBorder)
+        Button("Continue", action: close)
+            .buttonStyle(.borderedProminent).tint(.pink)
+            .padding()
+        Text("(Keep in mind this is an beta feautures might be broken)")
+            .foregroundColor(.gray)
+            .font(.footnote)
+        
+        
+            .interactiveDismissDisabled()
+    }
+    
+    func close() {
+        if (checkSecretKey(inpt: key)) { dismiss() }
+    }
+}
 
 struct HomeView: View {
   @State private var showAlert = false
@@ -16,22 +53,16 @@ struct HomeView: View {
     "https://puffer.is-a.dev/scylla-ios/cdn/repoTemplate.json"
   @State private var certImported = true
   @State private var showNoCertAlert = false
-  @ObservedObject var repoModel = RepoModel()
+  @ObservedObject var repoData = RepoModel()
+  @State private var showingPrivBeta = true
   var body: some View {
     NavigationView {
       List {
-        Section("Testing") {
+        Section("WIP") {
           VStack {
-              List(repoModel.items, id: \.Info.repoName) { item in
-              VStack(alignment: .leading) {
-                  Text("\(item.Info?.repoName ?? "Cannot parse name")")
-                  Text("\(item.Info?.repoAuthor ?? "Cannot parse author")")
-                      .font(.system(size: 11))
-                      .foregroundColor(.gray)
-              }
-            }.listStyle(GroupedListStyle())
+              Text("Work in progress")
           }.onAppear(perform: {
-            repoModel.fetchData(repoUrl: mainRepoUrl)
+            repoData.fetchData(repoUrl: mainRepoUrl)
           })
         }
         //MARK: Custom Cert
@@ -44,14 +75,11 @@ struct HomeView: View {
             }.tint(.pink)
           }
           HStack {
-            Image(systemName: "checkmark.seal")
-            Button(action: { showingAlert = true }) {
-              Text("Select Custom Certificate").tint(.pink)
-            }.alert(isPresented: $showingAlert) {
-              Alert(
-                title: Text("Work in progress"), message: Text("We are working on it "),
-                dismissButton: .default(Text("Got it!")))
-            }
+            Image(systemName: "square.and.arrow.down")
+            NavigationLink(destination: SelectCertView()) {
+                Text("Select Certificate")
+                    .foregroundColor(.pink)
+            }.tint(.pink)
           }
         }.alert(isPresented: $showNoCertAlert) {
           Alert(
@@ -90,7 +118,7 @@ struct HomeView: View {
       }
     }.onAppear(perform: {
       if certImported { showNoCertAlert = false } else { showNoCertAlert = true }
-    })
+    }).sheet(isPresented: $showingPrivBeta, content: PrivateBeta.init)
   }
 }
 

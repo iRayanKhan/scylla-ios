@@ -9,20 +9,6 @@ import Foundation
 import SwiftUI
 import UniformTypeIdentifiers
 
-extension UIScreen {
-    var screenWidth: CGFloat {
-        return UIScreen.main.bounds.width
-    }
-    
-    var screenHeight: CGFloat {
-        return UIScreen.main.bounds.height
-    }
-    
-    var screenSize: CGSize {
-        return UIScreen.main.bounds.size
-    }
-}
-
 struct ImportCertView: View {
     @State private var showingAlert = false
     @State private var certPass: String = ""
