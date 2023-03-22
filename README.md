@@ -55,3 +55,7 @@ If you have any feedback, please reach out to me at kevin.alavik@icloud.com and 
 ## Optimizations
 
 Our code is designed to be quick and easy. No need for a million different menus and options just a simple page with apps and info and options. Nothing much
+## License
+
+[GNU General Public License v2.0](https://choosealicense.com/licenses/gpl-2.0/)
+
