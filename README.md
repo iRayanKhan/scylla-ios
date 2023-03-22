@@ -2,9 +2,8 @@
 
 **The**  best 3rd party app store out there for iOS!
 
-**Currently in beta features like app installing, custom signing certificates and repos are disabled. *WORKING BETA WILL BE OUT SOON***
+**Currently in beta features like app installing, custom signing certificates and repos are disabled.**
 
-![Logo](https://i.ibb.co/V205M6M/scylla-banner.png)
 
 
 ## Features
