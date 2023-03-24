@@ -53,7 +53,7 @@ struct HomeView: View {
   @State private var certImported = true
   @State private var showNoCertAlert = false
   @State private var repoData: Repo?
-  @State private var showingPrivBeta = true
+  @State private var showingPrivBeta = false
   @State private var repoError: String = ""
   var body: some View {
     NavigationView {
