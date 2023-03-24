@@ -8,9 +8,8 @@ import SwiftUI
 import UniformTypeIdentifiers
 import Foundation
 
-let scyllaVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+let scyllaVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
 var repoData: String = ""
-
 struct PrivateBeta: View {
     @Environment(\.dismiss) var dismiss
     @State private var key: String = ""
@@ -50,20 +49,48 @@ struct HomeView: View {
   @State private var showAlert = false
   @State private var showingAlert = false
   @State private var mainRepoUrl =
-    "https://puffer.is-a.dev/scylla-ios/cdn/repoTemplate.json"
+    "https://puffer.is-a.dev/scylla-ios/cdn/repo.json"
   @State private var certImported = true
   @State private var showNoCertAlert = false
-  @ObservedObject var repoData = RepoModel()
+  @State private var repoData: Repo?
   @State private var showingPrivBeta = true
+  @State private var repoError: String = ""
   var body: some View {
     NavigationView {
       List {
-        Section("WIP") {
-          VStack {
-              Text("Work in progress")
-          }.onAppear(perform: {
-            repoData.fetchData(repoUrl: mainRepoUrl)
-          })
+        Section("Welcome") {
+            Text("✨ Scylla")
+            Text("✨ Version " + scyllaVersion)
+        }
+        Section("Apps") {
+            VStack {
+                if let data = repoData {
+                    ForEach(data.data) { repoData in
+                        if repoError == repoError {
+                            Text("✨ Error: \(repoError)")
+                        } else {
+                            Text("✨ Repo Name: \(repoData.Info?.repoName ?? "No Name")\n")
+                            Text("✨ Repo Author: \(repoData.Info?.repoAuthor ?? "No Author")\n")
+                            Text("✨ Repo Version: \(repoData.Info?.repoVersion ?? "No Version")\n")
+                            Text("✨ Repo Description: \(repoData.Info?.repoDescription ?? "No Description")\n")
+                        }
+                    }
+                } else {
+                    Text("✨ Loading...")
+                }
+            }.onAppear {
+                fetchRepoData(repoUrl: "https://puffer.is-a.dev/scylla-ios/cdn/templateRepo.json") { result in
+                    switch result {
+                    case .success(let repo):
+                        print(repo)
+                        self.repoData = repo
+                    case .failure(let error):
+                        repoError = String(describing: error)
+                        print(repoError)
+                    }
+                }
+
+            }
         }
         //MARK: Custom Cert
         Section("Custom Cert") {
@@ -71,15 +98,13 @@ struct HomeView: View {
             Image(systemName: "square.and.arrow.down")
             NavigationLink(destination: ImportCertView()) {
               Text("Import Certificate")
-                .foregroundColor(.pink)
-            }.tint(.pink)
+            }
           }
           HStack {
-            Image(systemName: "square.and.arrow.down")
+            Image(systemName: "checkmark.circle")
             NavigationLink(destination: SelectCertView()) {
                 Text("Select Certificate")
-                    .foregroundColor(.pink)
-            }.tint(.pink)
+            }
           }
         }.alert(isPresented: $showNoCertAlert) {
           Alert(
@@ -92,28 +117,17 @@ struct HomeView: View {
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {
           Button(action: {
-            showingAlert = true
 
           }) {
             Image(systemName: "shippingbox.fill")
-          }.alert(isPresented: $showingAlert) {
-            Alert(
-              title: Text("This is an beta!"),
-              message: Text("Some stuff are disabled \n(Such as repos, custom certs)"),
-              dismissButton: .default(Text("Got it!")))
-          }.tint(.pink)
+          }
         }
         ToolbarItem(placement: .navigationBarTrailing) {
           Button(action: {
-            showingAlert = true
+            
           }) {
             Image(systemName: "signature")
-          }.alert(isPresented: $showingAlert) {
-            Alert(
-              title: Text("This is an beta!"),
-              message: Text("Some stuff are disabled \n(Such as repos, custom certs)"),
-              dismissButton: .default(Text("Got it!")))
-          }.tint(.pink)
+          }
         }
       }
     }.onAppear(perform: {
