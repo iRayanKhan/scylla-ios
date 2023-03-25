@@ -129,7 +129,17 @@ struct RepoView: View {
                 }
             }.position(x: UIScreen.screenWidth/2, y: 200)
             
-        }.navigationTitle("Repos")
+        }
+        .navigationTitle("Repos")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                }
+            }
+        }
     }
 }
 

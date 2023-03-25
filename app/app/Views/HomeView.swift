@@ -10,6 +10,7 @@ import Foundation
 
 let scyllaVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
 var repoData: String = ""
+
 struct PrivateBeta: View {
     @Environment(\.dismiss) var dismiss
     @State private var key: String = ""
@@ -32,7 +33,7 @@ struct PrivateBeta: View {
         Button("Continue", action: close)
             .buttonStyle(.borderedProminent).tint(.pink)
             .padding()
-        Text("(Keep in mind this is an beta feautures might be broken)")
+        Text("(Keep in mind this is a beta, features might be broken)")
             .foregroundColor(.gray)
             .font(.footnote)
         
@@ -55,28 +56,43 @@ struct HomeView: View {
   @State private var repoData: Repo?
   @State private var showingPrivBeta = false
   @State private var repoError: String = ""
-  @State private var loadingText = "✨ Loading..."
+  @State private var loadingText = "Loading..."
   var body: some View {
       NavigationView {
           List {
-            Section("Welcome") {
-                HStack {
-                    Text("✨ Scylla")
-                    Text("Beta")
-                        .foregroundColor(.pink)
-                }
-                HStack {
-                    Text("✨ Version " + scyllaVersion)
-                    Text("Beta")
-                        .foregroundColor(.pink)
-                }
-            }
-              Section("Placeholder") {
+              Section("Apps") {
+                  VStack {
+                      if let data = repoData {
+                          ForEach(data.data) { repoData in
+                              Text("Repo Name: \(repoData.Info?.repoName ?? "No Name")\n")
+                              Text("Repo Author: \(repoData.Info?.repoAuthor ?? "No Author")\n")
+                              Text("Repo Version: \(repoData.Info?.repoVersion ?? "No Version")\n")
+                              Text("Repo Description: \(repoData.Info?.repoDescription ?? "No Description")\n")
+                              
+                          }
+                      } else {
+                          Text(loadingText)
+                      }
+                  }.onAppear {
+                      fetchRepoData(repoUrl: "https://puffer.is-a.dev/scylla-ios/cdn/templateRepo.json") { result in
+                          switch result {
+                          case .success(let repo):
+                              print(repo)
+                              self.repoData = repo
+                          case .failure(let error):
+                              repoError = String(describing: error)
+                              print(repoError)
+                              loadingText = "Error: " + error.localizedDescription
+                          }
+                      }
+
+                  }
+              }
+              Section("Apps Placeholder") {
                   HStack {
                       Image("scylla")
                           .resizable()
                           .frame(width: 50, height: 50)
-                          .position(x: -10, y: 0)
                           .cornerRadius(10)
                       VStack {
                           Text("Scylla")
@@ -89,38 +105,29 @@ struct HomeView: View {
                           
                       }) {
                         Image(systemName: "arrow.down.app.fill")
-                              .frame(maxWidth: .infinity, alignment: .trailing)
+                              .frame( alignment: .trailing)
+                      }
+                  }
+                  HStack {
+                      Image("scylla")
+                          .resizable()
+                          .frame(width: 50, height: 50)
+                          .cornerRadius(10)
+                      VStack {
+                          Text("Scylla")
+                              .frame(maxWidth: .infinity, alignment: .leading)
+                          Text("com.scylla.app")
+                              .frame(maxWidth: .infinity, alignment: .leading)
+                              .font(.system(size: 10))
+                      }
+                      Button(action: {
+                          
+                      }) {
+                        Image(systemName: "arrow.down.app.fill")
+                              .frame( alignment: .trailing)
                       }
                   }
               }
-            Section("Apps") {
-                VStack {
-                    if let data = repoData {
-                        ForEach(data.data) { repoData in
-                            Text("✨ Repo Name: \(repoData.Info?.repoName ?? "No Name")\n")
-                            Text("✨ Repo Author: \(repoData.Info?.repoAuthor ?? "No Author")\n")
-                            Text("✨ Repo Version: \(repoData.Info?.repoVersion ?? "No Version")\n")
-                            Text("✨ Repo Description: \(repoData.Info?.repoDescription ?? "No Description")\n")
-                            
-                        }
-                    } else {
-                        Text(loadingText)
-                    }
-                }.onAppear {
-                    fetchRepoData(repoUrl: "https://puffer.is-a.dev/scylla-ios/cdn/templateRepo.json") { result in
-                        switch result {
-                        case .success(let repo):
-                            print(repo)
-                            self.repoData = repo
-                        case .failure(let error):
-                            repoError = String(describing: error)
-                            print(repoError)
-                            loadingText = "✨ Error: " + error.localizedDescription
-                        }
-                    }
-
-                }
-            }
               //MARK: Section Repo
               Section("Repos") {
                   HStack {
@@ -146,7 +153,7 @@ struct HomeView: View {
               }
             }.alert(isPresented: $showNoCertAlert) {
               Alert(
-                title: Text("No Cert Imported!"), message: Text("You havent imported any certs!"),
+                title: Text("No Cert Imported!"), message: Text("You havent imported any certificates!"),
                 primaryButton: .destructive(Text("Dissmiss")),
                 secondaryButton: .default(Text("Import Certificate")))
             }
@@ -159,14 +166,13 @@ struct HomeView: View {
                 }
               }
             ToolbarItem(placement: .navigationBarTrailing) {
-              Button(action: {
-                
-              }) {
-                Image(systemName: "signature")
-              }
+                NavigationLink(destination: SignView()) {
+                    Image(systemName: "signature")
+                }
             }
           }
         }.onAppear(perform: {
+            //createServer(port: 2200, res: "Scylla local Server:\nScylla Version: \(scyllaVersion)\n\(UIDevice.modelName)")
           if certImported { showNoCertAlert = false } else { showNoCertAlert = true }
         }).sheet(isPresented: $showingPrivBeta, content: PrivateBeta.init)
     }

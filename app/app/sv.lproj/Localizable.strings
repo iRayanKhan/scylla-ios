@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  app
+
+  Created by Kevin Alavik on 2023-03-25.
+  
+*/
+
+
+"This is a private beta!" = "Detta är en privat beta!";
+"Please do not share it" = "Snälla dela inte den!";
+"Secret key (Check the #secret-keys channel for the newest key)" = "Hemlig nyckel (Kolla i #secret-keys kanalen för den nyaste nyckeln)";
+"Continue" = "Fortsät";
+"(Keep in mind this is a beta, features might be broken)" = "(Kom ihåg att detta är en beta, funktioner kan vara trasiga)";
+"Loading..." = "Laddar...";
+"Apps" = "Appar";
+"Apps Placeholder" = "App Platshållare";
+"Manage repos" = "Hantera repos";
+"Custom Cert" = "Anpassat Certifikat";
+"Import Certificate" = "Importera Certifikat";
+"Select Certificate" = "Välj Certifikat";
+"No Cert Imported!" = "Inget Certifikat Importerat!";
+"You havent imported any certificates!" = "Du har inte importerat några certifikat";
+"Dissmiss" = "Avböj";
+"Credits" = "Tack vare";
+"Lead Developer" = "Lead Utvecklare";
+"Developer" = "Utvecklare";
+"Contributor" = "Bidragare";
+"Testers" = "Testare";
+"Debugging" = "Felsökning";
+"Output to port" = "Utgång till port";
+"Enable output to" = "Aktivera utgång till";
+"Experimental" = "Experimentell";
+"Enable support for big repos" = "Aktivera stöd för stora repos";
+"Disable only if you know what you are doing" = "Inaktivera endast om du vet vad du gör";
+"Enable support for Esign source links" = "Aktivera stöd för Esign-källlänkar";
+"Enable themes" = "Aktivera teman";
+"Use local server to install apps" = "Använd lokal server för att installera appar";
+"Use port" = "Använd port";
+"Use custom codesign api" = "Använd anpassad codesign api";
+"Custom URL/IP" = "Anpassad URL/IP";
+"Nerd Info" = "Nörd Info";
+"Running server on" = "Kör server på";
+"Failed to start server" = "Det gick inte att starta servern";
+"Select p12 and mobileprovision" = "Välj p12 och mobilprovision";
+"Password (leave blank if there is none)" = "Lösenord (lämna tomt om det inte finns något)";
+"Add certificate" = "Lägg till certifikat";
+"Custom App Name" = "Anpassat appnamn";
+"Custom Bundle ID" = "Anpassat Bundle ID";
+"Sign" = "Signera";
+"Select certificate" = "Välj certifikat";
+"Always use this cert" = "Använd alltid detta certifikat";
+"Imported Repo(s)" = "Importerade Repo(s)";
+"Community Repos" = "Andra Repos";
+"Placeholder" = "Platshållare";

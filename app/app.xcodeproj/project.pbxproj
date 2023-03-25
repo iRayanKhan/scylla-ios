@@ -19,6 +19,10 @@
 		04BCC7F229BCB6DC006C969E /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7EF29BCB6DB006C969E /* DeviceManager.swift */; };
 		0A1DC88A29C700500092E4B9 /* SelectCertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DC88929C700500092E4B9 /* SelectCertView.swift */; };
 		0A24AF4529CEFA8E00B9F46F /* RepoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24AF4429CEFA8E00B9F46F /* RepoView.swift */; };
+		0A24AF4729CF0F4900B9F46F /* BlockUdid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24AF4629CF0F4900B9F46F /* BlockUdid.swift */; };
+		0A24AF4929CF235300B9F46F /* LocalServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24AF4829CF235300B9F46F /* LocalServer.swift */; };
+		0A24AF4C29CF247700B9F46F /* Kitura in Frameworks */ = {isa = PBXBuildFile; productRef = 0A24AF4B29CF247700B9F46F /* Kitura */; };
+		0A5C3F3E29CF45640076F679 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C3F4029CF45640076F679 /* Localizable.strings */; };
 		0AC3EF1329BF79CB004F0899 /* RepoSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3EF1229BF79CB004F0899 /* RepoSystem.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0A5C3F3829CF447A0076F679 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		04BCC7D629BCAA3A006C969E /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		04BCC7D729BCAA3B006C969E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +70,10 @@
 		04BCC7F729BCBEC0006C969E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A1DC88929C700500092E4B9 /* SelectCertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCertView.swift; sourceTree = "<group>"; };
 		0A24AF4429CEFA8E00B9F46F /* RepoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoView.swift; sourceTree = "<group>"; };
+		0A24AF4629CF0F4900B9F46F /* BlockUdid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUdid.swift; sourceTree = "<group>"; };
+		0A24AF4829CF235300B9F46F /* LocalServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServer.swift; sourceTree = "<group>"; };
+		0A5C3F3F29CF45640076F679 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0A5C3F4129CF45710076F679 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0A788E9B29BA3808003CDF42 /* Scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EAB29BA380A003CDF42 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EB529BA380A003CDF42 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A24AF4C29CF247700B9F46F /* Kitura in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +126,8 @@
 				04BCC7EF29BCB6DB006C969E /* DeviceManager.swift */,
 				04BCC7F029BCB6DC006C969E /* functions.swift */,
 				0AC3EF1229BF79CB004F0899 /* RepoSystem.swift */,
+				0A24AF4629CF0F4900B9F46F /* BlockUdid.swift */,
+				0A24AF4829CF235300B9F46F /* LocalServer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +159,7 @@
 				04BCC7E029BCAAF7006C969E /* appApp.swift */,
 				04BCC7D729BCAA3B006C969E /* Assets.xcassets */,
 				04BCC7D629BCAA3A006C969E /* Preview Content */,
+				0A5C3F4029CF45640076F679 /* Localizable.strings */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -149,6 +174,7 @@
 				0A788E9729BA3808003CDF42 /* Sources */,
 				0A788E9829BA3808003CDF42 /* Frameworks */,
 				0A788E9929BA3808003CDF42 /* Resources */,
+				0A5C3F3829CF447A0076F679 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -156,6 +182,7 @@
 			);
 			name = app;
 			packageProductDependencies = (
+				0A24AF4B29CF247700B9F46F /* Kitura */,
 			);
 			productName = app;
 			productReference = 0A788E9B29BA3808003CDF42 /* Scylla.app */;
@@ -228,11 +255,13 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = 0A788E9229BA3808003CDF42;
 			packageReferences = (
 				048227F429BDAA04009D8573 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				048227F729BDED82009D8573 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0A24AF4A29CF247700B9F46F /* XCRemoteSwiftPackageReference "Kitura" */,
 			);
 			productRefGroup = 0A788E9C29BA3808003CDF42 /* Products */;
 			projectDirPath = "";
@@ -251,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048227F329BCEF48009D8573 /* Assets.xcassets in Resources */,
+				0A5C3F3E29CF45640076F679 /* Localizable.strings in Resources */,
 				04BCC7DC29BCAA3D006C969E /* Preview Content in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,10 +313,12 @@
 				04BCC7F129BCB6DC006C969E /* functions.swift in Sources */,
 				0A1DC88A29C700500092E4B9 /* SelectCertView.swift in Sources */,
 				04BCC7E829BCB62B006C969E /* HomeView.swift in Sources */,
+				0A24AF4729CF0F4900B9F46F /* BlockUdid.swift in Sources */,
 				04BCC7EC29BCB62B006C969E /* ImportCertView.swift in Sources */,
 				04BCC7E929BCB62B006C969E /* ContentView.swift in Sources */,
 				0AC3EF1329BF79CB004F0899 /* RepoSystem.swift in Sources */,
 				04BCC7EB29BCB62B006C969E /* OtherView.swift in Sources */,
+				0A24AF4929CF235300B9F46F /* LocalServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +350,18 @@
 			targetProxy = 0A788EB629BA380A003CDF42 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0A5C3F4029CF45640076F679 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A5C3F3F29CF45640076F679 /* en */,
+				0A5C3F4129CF45710076F679 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0A788EBD29BA380A003CDF42 /* Debug */ = {
@@ -635,7 +679,23 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		0A24AF4A29CF247700B9F46F /* XCRemoteSwiftPackageReference "Kitura" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Kitura";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A24AF4B29CF247700B9F46F /* Kitura */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A24AF4A29CF247700B9F46F /* XCRemoteSwiftPackageReference "Kitura" */;
+			productName = Kitura;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A788E9329BA3808003CDF42 /* Project object */;
 }

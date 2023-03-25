@@ -19,7 +19,7 @@ struct SignView: View {
             
             HStack {
                 Button("Select IPA") {
-                    openDocumentPicker(fileExtension: "json", allowMultiple: false)
+                    openDocumentPicker(fileExtension: "ipa", allowMultiple: false)
                 }.buttonStyle(.borderedProminent).tint(.pink)
                 HStack {
                     Button("Select Cert") {
@@ -55,24 +55,6 @@ struct SignView: View {
             }
         }
         .position(x: UIScreen.screenWidth/2, y: UIScreen.screenHeight/2-350)
-        .navigationTitle("Scylla")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        showingAlert = true
-                        
-                    }) {
-                        Image(systemName: "shippingbox.fill")
-                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        showingAlert = true
-                    }) {
-                        Image(systemName: "signature")
-                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
-                }
-            }
     }
 }
 

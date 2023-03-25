@@ -19,6 +19,16 @@ struct OtherView: View {
     @State private var releaseURL: URL? = nil
     @State private var showAlert = false
     @State private var udid = UIDevice.current.identifierForVendor!.uuidString
+    @State private var outPort: String = "2212"
+    @State private var outPut: Bool = false
+    @State private var bigRepo: Bool = false
+    @State private var lazzy: Bool = true
+    @State private var sourceLinks: Bool = false
+    @State private var themes: Bool = false
+    @State private var localServer: Bool = false
+    @State private var installPort: String = "2213"
+    @State private var codeCustom: Bool = false
+    @State private var codeUrl: String = "puffer.is-a.dev/scylla-ios/api/sign"
     var body: some View {
         NavigationView {
             List {
@@ -61,9 +71,74 @@ struct OtherView: View {
                         Text("Kixrd")
                     }
                 }
+                //MARK: Debug
+                Section("Debugging") {
+                    HStack(spacing: 10) {
+                        Text("Output to port: ")
+                        TextField("", text: $outPort)
+                    }
+                    HStack(spacing: 10) {
+                        Text("Enable output to \(getWiFiAddress()! + ":" + outPort )")
+                        Toggle("", isOn: $outPut)
+                    }
+                }
+                //MARK: Experimental
+                Section("⚠️ Experimental") {
+                    HStack(spacing: 10) {
+                        Text("Enable support for big repos")
+                        Toggle("", isOn: $bigRepo)
+                    }
+                    if bigRepo {
+                        HStack(spacing: 10) {
+                            VStack {
+                                Text("Lazzy loading")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                Text("(Disable only if you know what you are doing)")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.system(size: 10))
+                            }
+                            Toggle("", isOn: $lazzy)
+                        }
+                    }
+                    HStack(spacing: 10) {
+                        Text("Enable support for Esign source links")
+                        Toggle("", isOn: $sourceLinks)
+                    }
+                    HStack(spacing: 10) {
+                        Text("Enable themes")
+                        Toggle("", isOn: $themes)
+                    }
+                    HStack(spacing: 10) {
+                        Text("Use local server to install apps")
+                        Toggle("", isOn: $localServer)
+                    }
+                    if localServer {
+                        HStack(spacing: 10) {
+                            Text("Use port: ")
+                            TextField("", text: $installPort)
+                        }
+                    }
+                    HStack(spacing: 10) {
+                        Text("Use custom codesign api")
+                        Toggle("", isOn: $codeCustom)
+                    }
+                    if codeCustom {
+                        HStack(spacing: 10) {
+                            Text("Custom URL/IP")
+                            TextField("", text: $codeUrl)
+                        }
+                    }
+                    
+                }
                 //MARK: 🤓 Nerd Info
                 Section("🤓 Nerd Info") {
-                    
+                    HStack(spacing: 10) {
+                        if checkLocalServer() {
+                            Text("✅ Running server on \(localUrl)").foregroundColor(.green)
+                        } else {
+                            Text("❌ Failed to start server")
+                        }
+                    }
                     HStack(spacing: 10) {
                         Image(systemName: "gear")
                             .foregroundColor(Color.gray)
@@ -103,23 +178,8 @@ struct OtherView: View {
                 }
             }
             .navigationTitle("Scylla")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        showingAlert = true
-                        
-                    }) {
-                        Image(systemName: "shippingbox.fill")
-                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        showingAlert = true
-                    }) {
-                        Image(systemName: "signature")
-                    }.alert(isPresented: $showingAlert) {Alert(title: Text("This is an beta!"), message: Text("Some stuff are disabled \n(Such as repos, custom certs)"), dismissButton: .default(Text("Got it!")))}.tint(.pink)
-                }
-            }
+            .onAppear(perform: {
+                })
         }
     }
 }

@@ -90,50 +90,6 @@ struct Permissions: Decodable, Hashable {
     let usageDescription: String?
 }
 
-/* class RepoModel: ObservableObject {  @Published var items = [RepoData]();
-    func fetchData(repoUrl: String) {
-        guard let url = URL(string: repoUrl) else { return };
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-          do {
-             if let data = data {
-                 let result = try JSONDecoder().decode([RepoData].self, from: data);
-                 DispatchQueue.main.async {
-                     self.items = result
-                 }
-                 print(result)
-             } else {
-                 print("No data")
-             }
-          } catch (let error) {
-             print(error.localizedDescription)
-          }
-         }.resume()
-    }
-    func newFetchData(repoUrl: String) {
-        guard let url = URL(string: repoUrl) else { return };
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            do {
-                if let data = data {
-                    if let result = try? JSONDecoder().decode([RepoData].self, from: data) {
-                        print(result)
-                        DispatchQueue.main.async {
-                            self.items = result
-                        }
-                    } else {
-                        print("Invalid Response")
-                    }
-                } else if let error = error {
-                    print("HTTP Request Failed \(error)")
-                }
-            } catch (let error) {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
-    
-
-} */
-
 func fetchRepoData(repoUrl: String, completion: @escaping (Result<Repo, Error>) -> Void) {
     guard let url = URL(string: repoUrl) else {
         completion(.failure(NSError(domain: repoUrl, code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
