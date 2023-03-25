@@ -1,13 +1,11 @@
 {
-    "Info": [
-        {
-            "repoName":"Scylla's Base Repo",
-            "repoAuthor":"@pufferisadev",
-            "repoVersion":"0.1",
-            "repoIcon":"https://puffer.is-a.dev/scylla-ios/cdn/images/scyllalogo.jspn",
-            "repoDescription":"The base repo for Scylla"
-        }
-    ],
+    "Info": {
+    	"repoName":"Scylla's Base Repo",
+        "repoAuthor":"@pufferisadev",
+        "repoVersion":"0.1"
+        "repoIcon":"https://puffer.is-a.dev/scylla-ios/cdn/images/scyllalogo.jspn",
+        "repoDescription":"The base repo for Scylla"
+    },
     "Utilities": [
         {
             "name":"Cowabunga",
