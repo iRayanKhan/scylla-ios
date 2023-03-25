@@ -2,8 +2,8 @@
     "Info": {
     	"repoName":"Scylla's Base Repo",
         "repoAuthor":"@pufferisadev",
-        "repoVersion":"0.1"
-        "repoIcon":"https://puffer.is-a.dev/scylla-ios/cdn/images/scyllalogo.jspn",
+        "repoVersion":"0.1",
+        "repoIcon":"https://puffer.is-a.dev/scylla-ios/cdn/images/scyllalogo.jpg",
         "repoDescription":"The base repo for Scylla"
     },
     "Utilities": [
