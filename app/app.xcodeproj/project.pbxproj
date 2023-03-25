@@ -18,6 +18,7 @@
 		04BCC7F129BCB6DC006C969E /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7F029BCB6DC006C969E /* functions.swift */; };
 		04BCC7F229BCB6DC006C969E /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7EF29BCB6DB006C969E /* DeviceManager.swift */; };
 		0A1DC88A29C700500092E4B9 /* SelectCertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DC88929C700500092E4B9 /* SelectCertView.swift */; };
+		0A24AF4529CEFA8E00B9F46F /* RepoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24AF4429CEFA8E00B9F46F /* RepoView.swift */; };
 		0AC3EF1329BF79CB004F0899 /* RepoSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3EF1229BF79CB004F0899 /* RepoSystem.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		04BCC7F029BCB6DC006C969E /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		04BCC7F729BCBEC0006C969E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A1DC88929C700500092E4B9 /* SelectCertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCertView.swift; sourceTree = "<group>"; };
+		0A24AF4429CEFA8E00B9F46F /* RepoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoView.swift; sourceTree = "<group>"; };
 		0A788E9B29BA3808003CDF42 /* Scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EAB29BA380A003CDF42 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A788EB529BA380A003CDF42 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				04BCC7E629BCB62B006C969E /* OtherView.swift */,
 				04BCC7E529BCB62B006C969E /* SignView.swift */,
 				0A1DC88929C700500092E4B9 /* SelectCertView.swift */,
+				0A24AF4429CEFA8E00B9F46F /* RepoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A24AF4529CEFA8E00B9F46F /* RepoView.swift in Sources */,
 				04BCC7E129BCAAF8006C969E /* appApp.swift in Sources */,
 				04BCC7F229BCB6DC006C969E /* DeviceManager.swift in Sources */,
 				04BCC7EA29BCB62B006C969E /* SignView.swift in Sources */,
@@ -440,7 +444,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.1.2;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -457,7 +461,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scylla.app;
 				PRODUCT_NAME = Scylla;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -475,7 +479,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.1.2;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -492,7 +496,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scylla.app;
 				PRODUCT_NAME = Scylla;
 				SWIFT_EMIT_LOC_STRINGS = YES;

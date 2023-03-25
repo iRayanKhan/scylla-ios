@@ -12,6 +12,9 @@ struct Repo: Decodable {
 }
 struct RepoData: Decodable, Identifiable {
     var id: UUID = UUID()
+    var repo: String?
+    var error: String?
+    //MARK: SCYLLA REPO FORMAT
     let Info: RepoInfo?
     let Utilities: [AppInfo]?
     let Games: [AppInfo]?
@@ -133,14 +136,14 @@ struct Permissions: Decodable, Hashable {
 
 func fetchRepoData(repoUrl: String, completion: @escaping (Result<Repo, Error>) -> Void) {
     guard let url = URL(string: repoUrl) else {
-        completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+        completion(.failure(NSError(domain: repoUrl, code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
         return
     }
 
     let session = URLSession.shared
     let task = session.dataTask(with: url) { (data, response, error) in
         guard let data = data, error == nil else {
-            completion(.failure(error ?? NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid data"])))
+            completion(.failure(error ?? NSError(domain: repoUrl, code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid data"])))
             return
         }
 
