@@ -31,6 +31,11 @@ Repo Template: https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/doc
 
  - [Ryan Khan (Fixed some UI related issues)](https://github.com/iRayanKhan)
 
+## Contact
+
+ - contact@getscylla.app
+ - admin@getscylla.app
+
 ## Stats
 ![](https://img.shields.io/github/downloads/KevinAlavik/scylla-ios/total)
 ![](https://img.shields.io/github/repo-size/kevinalavik/scylla-ios)
