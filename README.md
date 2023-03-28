@@ -4,7 +4,7 @@
 
 **Currently in beta features like app installing, custom signing certificates and repos are disabled.**
 
-
+**Powered by cocotweaks**
 
 ## Features
 
