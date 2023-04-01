@@ -25,7 +25,6 @@ Repo Template: https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/doc
 ## Developers
 
  - [@pufferisadev (Lead Developer)](https://twitter.com/pufferisadev)
- - [@mrbeef777 (Developer)](https://twitter.com/mrbeef777)
 
 ## Credits
 
