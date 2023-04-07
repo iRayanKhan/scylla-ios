@@ -4,8 +4,6 @@
 
 **Currently in beta features like app installing, custom signing certificates and repos are disabled.**
 
-
-
 ## Features
 
 - Custom signing certificates
@@ -25,11 +23,15 @@ Repo Template: https://raw.githubusercontent.com/KevinAlavik/scylla-ios/main/doc
 ## Developers
 
  - [@pufferisadev (Lead Developer)](https://twitter.com/pufferisadev)
- - [@mrbeef777 (Developer)](https://twitter.com/mrbeef777)
 
 ## Credits
 
  - [Ryan Khan (Fixed some UI related issues)](https://github.com/iRayanKhan)
+
+## Contact
+
+ - contact@getscylla.app
+ - admin@getscylla.app
 
 ## Stats
 ![](https://img.shields.io/github/downloads/KevinAlavik/scylla-ios/total)

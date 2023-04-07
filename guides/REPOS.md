@@ -12,15 +12,13 @@ Its not very hard making an repo you just need to follow this code:
 
 ```json
 {
-  "Info":[
-    {
+  "Info": {
         "repoName":"Template Repo",
         "repoAuthor":"your name",
         "repoVersion":"1.0",
         "repoIcon":"some url to an image",
         "repoDescription":"short description about the repo"
-    }
-  ],
+  },
   "Utilities":[
         {
             "name":"App Name",
