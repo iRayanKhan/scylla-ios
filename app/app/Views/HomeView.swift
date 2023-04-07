@@ -7,6 +7,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 import Foundation
+import Kingfisher
 
 let scyllaVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
 var repoData: String = ""
@@ -53,78 +54,87 @@ struct HomeView: View {
     "https://puffer.is-a.dev/scylla-ios/cdn/repo.json"
   @State private var certImported = true
   @State private var showNoCertAlert = false
-  @State private var repoData: Repo?
+    @State private var repoData: [Repo] = []
+    @State private var repos = ["https://puffer.is-a.dev/scylla-ios/cdn/repo.json"]
   @State private var showingPrivBeta = false
   @State private var repoError: String = ""
-  @State private var loadingText = "Loading..."
+  @State private var loadingText = ""
+@State private var appsLoaded = false
   var body: some View {
       NavigationView {
           List {
-              Section("Apps") {
+              Section("Installed Apps") {
+                  HStack {
+                      KFImage(URL(string:"https://puffer.is-a.dev/scylla-ios/cdn/images/scyllalogo.jpg")!)
+                          .resizable()
+                          .frame(width: 50, height: 50)
+                          .cornerRadius(10)
+                      VStack {
+                          Text("Scylla")
+                              .frame(maxWidth: .infinity, alignment: .leading)
+                          Text(scyllaVersion)
+                              .frame(maxWidth: .infinity, alignment: .leading)
+                              .font(.system(size: 10))
+                      }
+                  }
+              }
+              Section("Repos") {
                   VStack {
-                      if let data = repoData {
-                          ForEach(data.data) { repoData in
-                              Text("Repo Name: \(repoData.Info?.repoName ?? "No Name")\n")
-                              Text("Repo Author: \(repoData.Info?.repoAuthor ?? "No Author")\n")
-                              Text("Repo Version: \(repoData.Info?.repoVersion ?? "No Version")\n")
-                              Text("Repo Description: \(repoData.Info?.repoDescription ?? "No Description")\n")
-                              
+                      if let repoData = repoData {
+                          ForEach(repoData) { repoData in
+                              HStack {
+                                  KFImage(URL(string:repoData.META?.repoIcon ?? repoData.Info?.repoIcon ?? "")!)
+                                      .resizable()
+                                      .frame(width: 50, height: 50)
+                                      .cornerRadius(10)
+                                  VStack {
+                                      Text(repoData.META?.repoName ?? repoData.Info?.repoName ?? "No Name")
+                                          .frame(maxWidth: .infinity, alignment: .leading)
+                                      Text(repoData.Info?.repoAuthor ?? "No Author")
+                                          .frame(maxWidth: .infinity, alignment: .leading)
+                                          .font(.system(size: 10))
+                                  }
+                                  /*NavigationLink(Image(systemName: "chevron.right").frame(maxWidth: .infinity, alignment: .trailing)) {
+                                      List {
+                                          Section("Utilities") {
+                                              ForEach(repoData.Utilities) { utili in
+                                                  HStack {
+                                                      KFImage(URL(string:utili.icon)!)
+                                                          .resizable()
+                                                          .frame(width: 50, height: 50)
+                                                          .cornerRadius(10)
+                                                      VStack {
+                                                          Text(utili.name ?? "No Name")
+                                                              .frame(maxWidth: .infinity, alignment: .leading)
+                                                          Text(utili.developer ?? "No Developer")
+                                                              .frame(maxWidth: .infinity, alignment: .leading)
+                                                              .font(.system(size: 10))
+                                                      }
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }*/
+                              }
                           }
                       } else {
                           Text(loadingText)
                       }
-                  }.onAppear {
-                      fetchRepoData(repoUrl: "https://puffer.is-a.dev/scylla-ios/cdn/templateRepo.json") { result in
-                          switch result {
-                          case .success(let repo):
-                              print(repo)
-                              self.repoData = repo
-                          case .failure(let error):
-                              repoError = String(describing: error)
-                              print(repoError)
-                              loadingText = "Error: " + error.localizedDescription
+                  }
+              }.onAppear {
+                  if !appsLoaded {
+                      for repoUrl in repos {
+                          fetchRepoData(repoUrl: repoUrl) { result in
+                              switch result {
+                              case .success(let repo):
+                                  self.repoData.append(repo) // TODO: Check if you already added the repo - this stops duplicates.
+                                  appsLoaded = true
+                              case .failure(let error):
+                                  repoError = String(describing: error)
+                                  print(repoError)
+                                  loadingText = "Error: " + error.localizedDescription
+                              }
                           }
-                      }
-
-                  }
-              }
-              Section("Apps Placeholder") {
-                  HStack {
-                      Image("scylla")
-                          .resizable()
-                          .frame(width: 50, height: 50)
-                          .cornerRadius(10)
-                      VStack {
-                          Text("Scylla")
-                              .frame(maxWidth: .infinity, alignment: .leading)
-                          Text("com.scylla.app")
-                              .frame(maxWidth: .infinity, alignment: .leading)
-                              .font(.system(size: 10))
-                      }
-                      Button(action: {
-                          
-                      }) {
-                        Image(systemName: "arrow.down.app.fill")
-                              .frame( alignment: .trailing)
-                      }
-                  }
-                  HStack {
-                      Image("scylla")
-                          .resizable()
-                          .frame(width: 50, height: 50)
-                          .cornerRadius(10)
-                      VStack {
-                          Text("Scylla")
-                              .frame(maxWidth: .infinity, alignment: .leading)
-                          Text("com.scylla.app")
-                              .frame(maxWidth: .infinity, alignment: .leading)
-                              .font(.system(size: 10))
-                      }
-                      Button(action: {
-                          
-                      }) {
-                        Image(systemName: "arrow.down.app.fill")
-                              .frame( alignment: .trailing)
                       }
                   }
               }

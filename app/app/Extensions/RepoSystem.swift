@@ -7,11 +7,8 @@
 
 import Foundation
 
-struct Repo: Decodable {
-    let data: [RepoData]
-}
-struct RepoData: Decodable, Identifiable {
-    var id: UUID = UUID()
+struct Repo: Decodable, Identifiable {
+    let id: UUID = UUID()
     var repo: String?
     var error: String?
     //MARK: SCYLLA REPO FORMAT
@@ -38,8 +35,8 @@ struct AppInfo: Decodable {
     let name: String
     let developer: String?
     let version: String?
-    let ipa: URL?
-    let icon: URL?
+    let ipa: String?
+    let icon: String?
     let iOS: String?
     let color: String?
     //MARK: SCARLET REPO FORMAT
@@ -68,16 +65,15 @@ struct AppInfo: Decodable {
     let bundleIdentifier: String?
     let developerName: String?
 }
-struct RepoInfo: Decodable, Hashable {
+struct RepoInfo: Decodable {
     let repoName: String?
     let repoAuthor: String?
     let repoVersion:  String?
     let repoDescription: String?
-    //MARK: SCARLET REPO FORMAT
-    let repoIcon: URL?
+    let repoIcon: String?
 }
 
-struct Versions: Decodable, Hashable {
+struct Versions: Decodable {
     let version: String?
     let date: String?
     let localizedDescription: String?
@@ -85,7 +81,7 @@ struct Versions: Decodable, Hashable {
     let size: Int?
 }
 
-struct Permissions: Decodable, Hashable {
+struct Permissions: Decodable {
     let type: String?
     let usageDescription: String?
 }
@@ -96,16 +92,14 @@ func fetchRepoData(repoUrl: String, completion: @escaping (Result<Repo, Error>) 
         return
     }
 
-    let session = URLSession.shared
-    let task = session.dataTask(with: url) { (data, response, error) in
+    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
         guard let data = data, error == nil else {
             completion(.failure(error ?? NSError(domain: repoUrl, code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid data"])))
             return
         }
 
         do {
-            let decoder = JSONDecoder()
-            let decodedData = try decoder.decode(Repo.self, from: data)
+            let decodedData = try JSONDecoder().decode(Repo.self, from: data)
             completion(.success(decodedData))
         } catch {
             completion(.failure(error))
