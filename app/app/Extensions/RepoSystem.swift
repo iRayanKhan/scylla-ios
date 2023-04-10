@@ -47,11 +47,11 @@ struct AppInfo: Decodable {
     let banner: String?
     let bundleID: String?
     let description: String?
-    let contact: [String]? // Updated to an array of strings
-    let screenshots: [URL]?
+    let contact: [String: String]? // Updated to an array of strings
+    let screenshots: [URL: URL]?
     let changelog: String?
     let appstore: String?
-    let debs: [URL]?
+    let debs: [URL: URL]?
     let dev: String?
     //MARK: ALTSTORE REPO FORMAT
     let versions: [Versions]?

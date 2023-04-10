@@ -9,6 +9,7 @@ import Foundation
 import UniformTypeIdentifiers
 import UIKit
 
+
 var selectedFile: URL?
 var secretKey: String = ""
 var showingAlert = false

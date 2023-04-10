@@ -14,14 +14,14 @@ struct SelectCertView: View {
     @State private var certPass: String = ""
     @State private var useCertAlways = false
     var body: some View {
-        Text("Import Certificate")
+        Text("Select Certificate")
             .font(.system(size: 30))
             .position(x: UIScreen.screenWidth/2, y: 150)
         
         VStack {
             HStack {
                 Button("Select certificate") {
-                    openDocumentPicker(fileExtension: "json", allowMultiple: false)
+                    openDocumentPicker(fileExtension: "yml", allowMultiple: false)
                 }.buttonStyle(.borderedProminent).tint(.pink)
             }
             Toggle(isOn: $useCertAlways) {

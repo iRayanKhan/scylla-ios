@@ -19,8 +19,11 @@ struct ImportCertView: View {
         
         VStack {
             HStack {
-                Button("Select p12 and mobileprovision") {
-                    openDocumentPicker(fileExtension: "json", allowMultiple: true)
+                Button("Select p12") {
+                    openDocumentPicker(fileExtension: "p12", allowMultiple: false)
+                }.buttonStyle(.borderedProminent).tint(.pink)
+                Button("Select mp") {
+                    openDocumentPicker(fileExtension: "mp", allowMultiple: false)
                 }.buttonStyle(.borderedProminent).tint(.pink)
             }
             
