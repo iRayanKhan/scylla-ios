@@ -20,8 +20,6 @@
 		0A1DC88A29C700500092E4B9 /* SelectCertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1DC88929C700500092E4B9 /* SelectCertView.swift */; };
 		0A24AF4529CEFA8E00B9F46F /* RepoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24AF4429CEFA8E00B9F46F /* RepoView.swift */; };
 		0A24AF4729CF0F4900B9F46F /* BlockUdid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24AF4629CF0F4900B9F46F /* BlockUdid.swift */; };
-		0A24AF4929CF235300B9F46F /* LocalServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24AF4829CF235300B9F46F /* LocalServer.swift */; };
-		0A24AF4C29CF247700B9F46F /* Kitura in Frameworks */ = {isa = PBXBuildFile; productRef = 0A24AF4B29CF247700B9F46F /* Kitura */; };
 		0A5C3F3E29CF45640076F679 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A5C3F4029CF45640076F679 /* Localizable.strings */; };
 		0A83480729CF5EE500A870FC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A83480629CF5EE500A870FC /* Kingfisher */; };
 		0AC3EF1329BF79CB004F0899 /* RepoSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3EF1229BF79CB004F0899 /* RepoSystem.swift */; };
@@ -72,7 +70,6 @@
 		0A1DC88929C700500092E4B9 /* SelectCertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCertView.swift; sourceTree = "<group>"; };
 		0A24AF4429CEFA8E00B9F46F /* RepoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoView.swift; sourceTree = "<group>"; };
 		0A24AF4629CF0F4900B9F46F /* BlockUdid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUdid.swift; sourceTree = "<group>"; };
-		0A24AF4829CF235300B9F46F /* LocalServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalServer.swift; sourceTree = "<group>"; };
 		0A5C3F3F29CF45640076F679 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0A5C3F4129CF45710076F679 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0A788E9B29BA3808003CDF42 /* Scylla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scylla.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +84,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A83480729CF5EE500A870FC /* Kingfisher in Frameworks */,
-				0A24AF4C29CF247700B9F46F /* Kitura in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +125,6 @@
 				04BCC7F029BCB6DC006C969E /* functions.swift */,
 				0AC3EF1229BF79CB004F0899 /* RepoSystem.swift */,
 				0A24AF4629CF0F4900B9F46F /* BlockUdid.swift */,
-				0A24AF4829CF235300B9F46F /* LocalServer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -155,6 +150,7 @@
 		0A788E9D29BA3808003CDF42 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				0AAB447029E3243200F09EF9 /* Signing */,
 				04BCC7F729BCBEC0006C969E /* Info.plist */,
 				04BCC7F429BCBD9A006C969E /* Extensions */,
 				04BCC7F329BCBD87006C969E /* Views */,
@@ -164,6 +160,14 @@
 				0A5C3F4029CF45640076F679 /* Localizable.strings */,
 			);
 			path = app;
+			sourceTree = "<group>";
+		};
+		0AAB447029E3243200F09EF9 /* Signing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Signing;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +188,6 @@
 			);
 			name = app;
 			packageProductDependencies = (
-				0A24AF4B29CF247700B9F46F /* Kitura */,
 				0A83480629CF5EE500A870FC /* Kingfisher */,
 			);
 			productName = app;
@@ -263,7 +266,6 @@
 			mainGroup = 0A788E9229BA3808003CDF42;
 			packageReferences = (
 				048227F729BDED82009D8573 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				0A24AF4A29CF247700B9F46F /* XCRemoteSwiftPackageReference "Kitura" */,
 				0A83480529CF5EE500A870FC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 0A788E9C29BA3808003CDF42 /* Products */;
@@ -321,7 +323,6 @@
 				04BCC7E929BCB62B006C969E /* ContentView.swift in Sources */,
 				0AC3EF1329BF79CB004F0899 /* RepoSystem.swift in Sources */,
 				04BCC7EB29BCB62B006C969E /* OtherView.swift in Sources */,
-				0A24AF4929CF235300B9F46F /* LocalServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,14 +675,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		0A24AF4A29CF247700B9F46F /* XCRemoteSwiftPackageReference "Kitura" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Kitura/Kitura";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		0A83480529CF5EE500A870FC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -693,11 +686,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0A24AF4B29CF247700B9F46F /* Kitura */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0A24AF4A29CF247700B9F46F /* XCRemoteSwiftPackageReference "Kitura" */;
-			productName = Kitura;
-		};
 		0A83480629CF5EE500A870FC /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0A83480529CF5EE500A870FC /* XCRemoteSwiftPackageReference "Kingfisher" */;

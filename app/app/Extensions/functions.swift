@@ -7,6 +7,7 @@
 import SwiftUI
 import Foundation
 import UniformTypeIdentifiers
+import UIKit
 
 var selectedFile: URL?
 var secretKey: String = ""
@@ -90,3 +91,5 @@ func getWiFiAddress() -> String? {
 
     return address
 }
+
+

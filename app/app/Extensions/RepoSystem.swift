@@ -28,11 +28,13 @@ struct Repo: Decodable, Identifiable {
     let indentifier: String?
     let sourceURL: String?
     let apps: [AppInfo]?
+    let description: String?
+    let subtitle: String?
 }
 
 
 struct AppInfo: Decodable {
-    let name: String
+    let name: String?
     let developer: String?
     let version: String?
     let ipa: String?
@@ -45,7 +47,7 @@ struct AppInfo: Decodable {
     let banner: String?
     let bundleID: String?
     let description: String?
-    let contact: [URL]?
+    let contact: [String]? // Updated to an array of strings
     let screenshots: [URL]?
     let changelog: String?
     let appstore: String?
@@ -65,6 +67,9 @@ struct AppInfo: Decodable {
     let bundleIdentifier: String?
     let developerName: String?
 }
+
+
+
 struct RepoInfo: Decodable {
     let repoName: String?
     let repoAuthor: String?
@@ -72,6 +77,7 @@ struct RepoInfo: Decodable {
     let repoDescription: String?
     let repoIcon: String?
 }
+
 
 struct Versions: Decodable {
     let version: String?

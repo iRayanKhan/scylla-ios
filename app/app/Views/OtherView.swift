@@ -133,11 +133,7 @@ struct OtherView: View {
                 //MARK: 🤓 Nerd Info
                 Section("🤓 Nerd Info") {
                     HStack(spacing: 10) {
-                        if checkLocalServer() {
-                            Text("✅ Running server on \(localUrl)").foregroundColor(.green)
-                        } else {
-                            Text("❌ Failed to start server")
-                        }
+                        Text("❌ Failed to start server")
                     }
                     HStack(spacing: 10) {
                         Image(systemName: "gear")
@@ -179,7 +175,7 @@ struct OtherView: View {
             }
             .navigationTitle("Scylla")
             .onAppear(perform: {
-                })
+            })
         }
     }
 }
